@@ -2,3 +2,13 @@
 <html lang="en" id="app">
 	<script type="module" src="/src/main.js"></script>
 </html>
+<style>
+	@media screen and (max-width: 100vh) { /* when the width is less than the height */
+		img.apple {
+			display: none;
+		}
+		#content div.text {
+			width: 80vw !important; /* inline styles were a mistake */
+		}
+	}
+</style>
