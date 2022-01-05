@@ -20,15 +20,14 @@
 					<br> <br> Hope you enjoy!
 				</p>
 			</div>
-			<img src="apple-image.jpg" style="position: absolute; bottom: 0px; right: 0px; height: calc(100vh - 50px); z-index: -1;" class="apple" alt="Apple">
+			<img src="/apple-image.jpg" style="position: absolute; bottom: 0px; right: 0px; height: calc(100vh - 50px); z-index: -1;" class="apple" alt="Apple">
 		</main>
 	</body>
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+import Head from "./components/Head.vue"
+import Navbar from "./components/Navbar.vue"
 </script>
 
 <style>
