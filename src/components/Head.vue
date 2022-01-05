@@ -7,7 +7,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=PT+Sans&family=Poppins:wght@600&family=Source+Code+Pro&display=swap" rel="stylesheet">
 	<meta charset="UTF-8">
 	<meta name="author" content="illogicalapple">
-	<meta name="description" content={{ description }}>
+	<meta name="description" content="{{ description }}">
 	<title>{{ title }}</title>
 </template>
 
