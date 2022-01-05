@@ -46,7 +46,7 @@ a {
 	color: black;
 	text-decoration: none;
 }
-#navigation a.option:hover::after {
+#navigation a.option:hover span::after {
 	background-color: #5C6BC0;
 	width: calc(100% - 10px);
 	height: 0.5em;
@@ -59,6 +59,10 @@ a {
 	text-decoration: underline;
 	text-decoration-thickness: 0.1em;
 	text-underline-offset: 0.1em;
+}
+
+#navigation a.option[class][class][class][class] {
+	text-decoration: unset;
 }
 
 .float-right {
