@@ -1,5 +1,5 @@
 <template>
-	<nav id="navigation" style="position: fixed; left: 0px; top: 0px; height: 75px; box-shadow: 0px 4px 4px #0008; background-color: var(--darkred);" class="full-width">
+	<nav id="navigation" style="position: fixed; left: 0px; top: 0px; height: 85px; background-color: white; border-bottom: 1px solid lightgray;" class="full-width">
 		<div style="position: absolute; left: 10px; width: 50px;" class="relative-full-height">
 			<a href="/" style="position: absolute; left: 0px; padding: 0px 20px; display: table;" class="relative-full-height title bold float-left option">
 				<span style="display: table-cell; vertical-align: middle; text-align: center;">
