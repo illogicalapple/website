@@ -1,0 +1,157 @@
+:root {
+	--darkred: #cc2f27;
+	--red: #ff3b30;
+	--orange: #ffa330;
+	--color: #121212;
+	--not-color: white;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+html, body {
+	font-family: Lato, system-ui, sans-serif;
+	overflow: hidden;
+	margin: 0px;
+}
+.red {
+	color: var(--red);
+}
+.darkred {
+	color: var(--darkred);
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px;
+}
+.full-width {
+	width: 100vw;
+	margin: 0px;
+}
+
+.full-height {
+	height: 100vh;
+	margin: 0px;
+}
+
+.relative-full-width {
+	width: 100%;
+	margin: 0px;
+}
+.relative-full-height {
+	height: 100%;
+	margin: 0px;
+}
+.bold {
+	font-weight: bold;
+}
+a {
+	color: black;
+	text-decoration: none;
+}
+#navigation a.option:hover {
+	text-decoration: none;
+	background-color: #0003;
+}
+:root a:hover {
+	text-decoration: underline;
+	text-decoration-thickness: 0.1em;
+	text-underline-offset: 0.1em;
+}
+
+.float-right {
+	float: right;
+}
+
+#navigation[id] * {
+	color: white;
+}
+
+.fullscreen {
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+}
+body[data-dark-mode] {
+	background-color: #121212;
+	color: white;
+	--color: white;
+	--not-color: #121212;
+}
+img.darkModeToggle {
+	cursor: pointer;
+	position: fixed;
+}
+button {
+	padding: 10px 20px;
+	background-color: var(--red);
+	border: none;
+	border-radius: 5px;
+	color: white;
+}
+button:hover {
+	background-color: var(--darkred);
+}
+*, ::before, ::after {
+	box-sizing: border-box;
+}
+@media screen and (max-width: 480px) {
+	nav#navigation div:nth-child(2) {
+		display: none;
+	}
+	nav#navigation img:is(img) {
+		display: unset;
+	}
+	nav#navigation div.menu.menu {
+		display: inline-block;
+	}
+}
+nav#navigation img {
+	display: none;
+	height: 1em;
+	float: right;
+	position: relative;
+	top: calc(35.5px - 0.5em);
+	right: calc(35.5px - 0.5em);
+}
+nav#navigation div.menu {
+	display: none;
+	background-color: var(--darkred);
+	position: absolute;
+	right: 10px;
+	top: 75px;
+	border-radius: 0px 0px 5px 5px;
+	padding: 5px 10px;
+	text-align: center;
+	border: solid #0003 1px;
+	background-clip: border-box;
+	box-shadow: 0px 4px 4px #0008;
+}
+nav#navigation div.menu a {
+	padding: 5px;
+	display: inline-block;
+	width: calc(100% + 20px);
+	position: relative;
+	right: 10px;
+}
+nav#navigation div.menu a:hover {
+	background-color: #0005;
+	text-decoration: none;
+}
+nav#navigation {
+	position: fixed;
+	z-index: 1;
+}
+input {
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	padding: 5px;
+	outline: none;
+}
+input:focus {
+	border-color: var(--orange);
+}
+main {
+	height: calc(100vh - 75px);
+	width: 100vw;
+	position: absolute;
+	top: 75px;
+	left: 0px;
+}
