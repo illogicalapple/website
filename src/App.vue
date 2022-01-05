@@ -29,14 +29,3 @@
 import Head from "./components/Head.vue"
 import Navbar from "./components/Navbar.vue"
 </script>
-
-<style>
-	@media screen and (max-width: 100vh) { /* when the width is less than the height */
-		img.apple {
-			display: none;
-		}
-		#content div.text {
-			width: 80vw !important; /* inline styles were a mistake */
-		}
-	}
-</style>
