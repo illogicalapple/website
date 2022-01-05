@@ -34,3 +34,10 @@ defineProps({
 	page: String
 });
 </script>
+
+<style scoped>
+	#navigation a > span {
+		font-size: 21px;
+		font-family: Poppins;
+	}
+</style>
