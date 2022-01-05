@@ -46,9 +46,14 @@ a {
 	color: black;
 	text-decoration: none;
 }
-#navigation a.option:hover {
-	text-decoration: none;
-	background-color: #0003;
+#navigation a.option:hover::after {
+	background-color: #5C6BC0;
+	width: calc(100% - 10px);
+	height: 0.5em;
+	margin: auto;
+	display: block;
+	margin-top: -0.3em;
+	content: "";
 }
 :root a:hover {
 	text-decoration: underline;
