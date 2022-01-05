@@ -53,9 +53,9 @@ a {
 #navigation a.option span::after {
 	content: "";
 	display: block;
+	margin: auto;
 	margin-top: -0.5em;
 	width: calc(100% - 10px);
-	margin: auto;
 	background-color: #007fff;
 	height: 0px;
 	transition: 0.3s;
