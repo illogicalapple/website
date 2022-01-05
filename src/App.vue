@@ -1,16 +1,6 @@
 <template>
 	<head>
 		<Head title="illogicalapple" description="illogicalapple's website"></Head>
-		<style>
-			@media screen and (max-width: 100vh) { /* when the width is less than the height */
-				img.apple {
-					display: none;
-				}
-				#content div.text {
-					width: 80vw !important; /* inline styles were a mistake */
-				}
-			}
-		</style>
 	</head>
 	<body style="margin: 0px;">
 		<Navbar page="home"></Navbar>
@@ -40,3 +30,14 @@ import HelloWorld from './components/HelloWorld.vue'
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
 </script>
+
+<style>
+	@media screen and (max-width: 100vh) { /* when the width is less than the height */
+		img.apple {
+			display: none;
+		}
+		#content div.text {
+			width: 80vw !important; /* inline styles were a mistake */
+		}
+	}
+</style>
