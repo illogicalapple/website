@@ -50,11 +50,15 @@ a {
 	color: black;
 	text-decoration: none;
 }
+#navigation a.option.nope {
+	cursor: default;
+}
+
 #navigation a.option:hover span::after {
 	height: 0.5em;
 }
 
-#navigation a.option span::after {
+#navigation a.option:not(.nope) span::after {
 	content: "";
 	display: block;
 	margin: auto;
