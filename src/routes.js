@@ -1,7 +1,8 @@
+import App from "App.vue";
 export let routes = [
 	{
 		path: "/",
-	 	component: Home,
+	 	component: App,
 	 	meta: {
 			title: "illogicalapple",
 			metaTags: [
@@ -24,4 +25,4 @@ export let routes = [
 			]
 		}
 	}
-]
+];
