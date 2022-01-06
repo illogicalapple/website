@@ -13,7 +13,7 @@
 					Stuff I made
 				</span>
 			</a>
-			<a href="/" style="display: table; padding: 0px 20px;" class="relative-full-height float-right option">
+			<a href="/" style="display: table; padding: 0px 20px;" class="relative-full-height float-right option home-option">
 				<span style="display: table-cell; vertical-align: middle; text-align: center;" class="{{ page == 'home' ? 'bold' : '' }}">
 					Home
 				</span>
