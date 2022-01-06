@@ -3,7 +3,7 @@
 		<div style="position: absolute; left: 10px; width: 50px;" class="relative-full-height">
 			<a href="/" style="position: absolute; left: 0px; padding: 0px 20px; display: table;" class="relative-full-height title bold float-left option">
 				<span style="display: table-cell; vertical-align: middle; text-align: center;">
-					illogicalapple
+					illogical<span class="blue">apple</span>
 				</span>
 			</a>
 		</div>
