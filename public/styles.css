@@ -55,7 +55,7 @@ a {
 }
 
 #navigation a.option:hover[class][class] span::after {
-	height: 0.5em;
+	width: calc(100% - 10px);
 }
 
 #navigation a.option:not(.nope) span::after {
@@ -63,9 +63,12 @@ a {
 	display: block;
 	margin: auto;
 	margin-top: -0.65em;
-	width: calc(100% - 10px);
+	height: 0.5em;
 	background-color: #007fff;
-	height: 0px;
+	width: 0px;
+	position: absolute;
+	left: 5px;
+	z-index: -1;
 	transition: 0.3s;
 }
 
@@ -77,6 +80,7 @@ a {
 
 #navigation a.option[class][class][class][class] {
 	text-decoration: unset;
+	position: relative;
 }
 
 .float-right {
@@ -172,9 +176,9 @@ input:focus {
 	border-color: var(--orange);
 }
 main {
-	height: calc(100vh - 75px);
+	height: calc(100vh - 85px);
 	width: 100vw;
 	position: absolute;
-	top: 75px;
+	top: 85px;
 	left: 0px;
 }
