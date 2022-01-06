@@ -1,5 +1,6 @@
 <template>
 	<Head></Head>
+	<data data-home></data>
 	<Navbar page="home" data-home></Navbar>
 	<main id="content">
 		<div class="text" style="position: absolute; transform: translateY(-50%); top: calc(50% + 50px); left: 10vw; width: calc(80vw - (100vh - 50px) / 1.509765625); font-size: 1.4em;">
