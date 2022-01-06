@@ -1,4 +1,4 @@
-import App from "App.vue";
+import App from "./App.vue";
 export let routes = [
 	{
 		path: "/",
