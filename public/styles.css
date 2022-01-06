@@ -54,6 +54,10 @@ a {
 	cursor: default;
 }
 
+#navigation a.option span {
+	position: relative;
+}
+
 #navigation a.option:hover[class][class] span::after {
 	width: calc(100% - 10px);
 }
@@ -80,7 +84,6 @@ a {
 
 #navigation a.option[class][class][class][class] {
 	text-decoration: unset;
-	position: relative;
 }
 
 .float-right {
