@@ -54,7 +54,7 @@ a {
 	cursor: default;
 }
 
-#navigation a.option:hover span::after {
+#navigation a.option:hover[class][class] span::after {
 	height: 0.5em;
 }
 
