@@ -2,10 +2,14 @@
 	--darkred: #cc2f27;
 	--red: #ff3b30;
 	--orange: #ffa330;
-	--color: #121212;
+	--secondary: #007fff;
+	--color: black;
 	--not-color: white;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
+}
+.blue {
+	color: var(--secondary);
 }
 html, body {
 	font-family: Lato, system-ui, sans-serif;
