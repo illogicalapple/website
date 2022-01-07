@@ -76,8 +76,8 @@ a {
 	transition: 0.3s;
 }
 data[data-home] ~ #navigation a.option span[class][class][class]::after {
-	transition: unset;
-	width: calc(100% - 10px);
+	/* transition: unset;
+	width: calc(100% - 10px); */
 }
 
 :root a:hover {
