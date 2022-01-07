@@ -6,8 +6,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 let app = createApp(App)
 let router = createRouter({
 	history: createWebHistory(),
-	routes: routes,
-})
+	routes: routes
+});
 
 app.use(router);
 app.mount(App);
