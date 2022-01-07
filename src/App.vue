@@ -1,9 +1,5 @@
-/* DON'T EDIT THIS, THANK YOU VERY MUCH. */
-
-/* I DID COMMENTS WRONG BUT I DONT CARE */
-
-
 <template>
+	<!-- dont edit this -->
 	<Head></Head>
 	<data data-home></data>
 	<Navbar page="home" data-home></Navbar>
