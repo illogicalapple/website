@@ -3,6 +3,7 @@ export let routes = [
 	{
 		path: "/",
 	 	component: Home,
+		name: "Home",
 	 	meta: {
 			title: "illogicalapple",
 			metaTags: [
