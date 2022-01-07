@@ -1,8 +1,8 @@
-import App from "./views/App.vue";
+import Home from "./views/Home.vue";
 export let routes = [
 	{
 		path: "/",
-	 	component: App,
+	 	component: Home,
 	 	meta: {
 			title: "illogicalapple",
 			metaTags: [
