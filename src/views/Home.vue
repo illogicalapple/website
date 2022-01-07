@@ -23,6 +23,6 @@
 </template>
 
 <script setup>
-import Head from "./components/Head.vue"
-import Navbar from "./components/Navbar.vue"
+import Head from "../components/Head.vue"
+import Navbar from "../components/Navbar.vue"
 </script>
