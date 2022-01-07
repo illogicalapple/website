@@ -152,8 +152,9 @@ nav#navigation div.menu {
 	/* top: 115px; */
 	top: 130px;
 	opacity: 0;
-	transition: 0.1s;
-	transition-property: top, opacity;
+	transition: 0.3s;
+	transition-property: top, opacity, filter;
+	filter: blur(15px);
 	border-radius: 5px;
 	padding: 5px 10px;
 	text-align: center;
@@ -165,6 +166,7 @@ nav#navigation div.menu {
 nav#navigation div.menu[data-open] {
 	top: 115px;
 	opacity: 1;
+	filter: none;
 }
 nav#navigation div.menu a {
 	padding: 5px;
