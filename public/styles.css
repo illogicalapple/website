@@ -12,7 +12,7 @@
 	color: var(--secondary);
 }
 html, body {
-	font-family: Lato, system-ui, sans-serif;
+	font-family: "PT Sans", system-ui;
 	overflow: hidden;
 	margin: 0px;
 }
@@ -24,6 +24,7 @@ html, body {
 }
 h1, h2, h3, h4, h5, h6 {
 	margin: 0px;
+	font-family: Poppins, system-ui;
 }
 .full-width {
 	width: 100vw;
