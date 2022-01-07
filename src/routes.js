@@ -28,7 +28,7 @@ export let routes = [
 		}
 	},
 	{
-		path: "/:catchAll(.*)",
+		path: "/:catchAll(.*)*",
 	 	component: NopeNothingHere,
 		name: "404",
 	 	meta: {
