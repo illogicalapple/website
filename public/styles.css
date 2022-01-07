@@ -58,7 +58,7 @@ a {
 	position: relative;
 }
 
-#navigation a.option:hover[class][class] span::after {
+#navigation :is(a.option:hover[class][class], a.active) span::after {
 	width: calc(100% - 10px);
 }
 
