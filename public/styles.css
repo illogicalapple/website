@@ -146,17 +146,25 @@ nav#navigation img {
 	right: calc(35.5px - 0.5em);
 }
 nav#navigation div.menu {
-	display: none;
-	background-color: var(--darkred);
+	background-color: white;
 	position: absolute;
-	right: 10px;
-	top: 75px;
-	border-radius: 0px 0px 5px 5px;
+	right: 30px;
+	/* top: 115px; */
+	top: 180px;
+	opacity: 0;
+	transition: 0.3s;
+	transition-property: top, opacity;
+	border-radius: 5px;
 	padding: 5px 10px;
 	text-align: center;
-	border: solid #0003 1px;
+	border: 1px solid lightgray;
 	background-clip: border-box;
-	box-shadow: 0px 4px 4px #0008;
+	width: 15em;
+	height: 20em;
+}
+nav#navigation div.menu[data-open] {
+	top: 115px;
+	opacity: 1;
 }
 nav#navigation div.menu a {
 	padding: 5px;
