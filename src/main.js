@@ -5,8 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 let app = createApp(App)
 let router = createRouter({
-	history: createWebHistory(),
-	mode: "history",
+	history: createWebHashHistory(),
 	routes: import.meta.hot ? [] : routes
 })
 
