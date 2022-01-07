@@ -1,3 +1,8 @@
+/* DON'T EDIT THIS, THANK YOU VERY MUCH. */
+
+/* I DID COMMENTS WRONG BUT I DONT CARE */
+
+
 <template>
 	<Head></Head>
 	<data data-home></data>
