@@ -5,8 +5,26 @@ import { createRouter, createWebHistory } from 'vue-router'
 let app = createApp()
 let router = createRouter({
 	history: createWebHistory(),
-	routes: routes
-});
+	routes: import.meta.hot ? [] : routes,
+})
 
-app.use(router);
-app.mount("#app");
+if (import.meta.hot) {
+	let removeRoutes = []
+
+	for (let route of routes) {
+		removeRoutes.push(router.addRoute(route))
+	}
+
+	import.meta.hot.accept('./routes.js', ({ routes }) => {
+		for (let removeRoute of removeRoutes) removeRoute()
+		removeRoutes = []
+		for (let route of routes) {
+			removeRoutes.push(router.addRoute(route))
+		}
+		router.replace('')
+	})
+}
+
+app.use(router)
+
+app.mount('#app')
