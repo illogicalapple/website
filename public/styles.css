@@ -75,7 +75,7 @@ a {
 	z-index: -1;
 	transition: 0.3s;
 }
-data[data-home] ~ #navigation a.option span::after[class][class][class] {
+data[data-home] ~ #navigation a.option span[class][class][class]::after {
 	transition: unset;
 	width: calc(100% - 10px);
 }
