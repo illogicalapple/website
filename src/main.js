@@ -6,6 +6,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 let app = createApp(App)
 let router = createRouter({
 	history: createWebHistory(),
+	mode: "history",
 	routes: import.meta.hot ? [] : routes
 })
 
