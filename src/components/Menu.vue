@@ -1,5 +1,5 @@
 <template>
-	<div class="menu" data-v-21dc7603="" data-v-337b3a89 style="text-align: left; padding: 1.5em 3em;">
+	<div class="menu" style="text-align: left; padding: 1.5em 3em; overflow-y: auto; overflow-x: hidden;">
 		<a href="/true-facts">
 			<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">True Facts</h2>
 			True facts about everything.
