@@ -10,12 +10,12 @@
 		<div style="position: absolute; right: 10px; top: 0px;" class="relative-full-height">
 			<a href="javascript:void(0)" style="display: table; padding: 0px 20px; cursor: pointer;" class="relative-full-height float-right option stuff-option">
 				<span style="display: table-cell; vertical-align: middle; text-align: center;" class="{{ page == 'stuff' ? 'bold' : '' }}">
-					Stuff I made
+					stuff i made
 				</span>
 			</a>
 			<a href="/" style="display: table; padding: 0px 20px;" class="relative-full-height float-right option home-option">
 				<span style="display: table-cell; vertical-align: middle; text-align: center;" class="{{ page == 'home' ? 'bold' : '' }}">
-					Home
+					home
 				</span>
 			</a>
 		</div>
