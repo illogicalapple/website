@@ -28,7 +28,7 @@ export let routes = [
 		}
 	},
 	{
-		path: "/404",
+		path: "/:pathMatch(.*)*",
 	 	component: NopeNothingHere,
 		name: "404",
 	 	meta: {
