@@ -1,5 +1,4 @@
 <template>
-	<Head></Head>
 	<data data-home></data>
 	<Navbar page="home" data-home></Navbar>
 	<main id="content">
@@ -23,6 +22,5 @@
 </template>
 
 <script setup>
-import Head from "../components/Head.vue"
 import Navbar from "../components/Navbar.vue"
 </script>
