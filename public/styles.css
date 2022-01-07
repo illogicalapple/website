@@ -163,11 +163,13 @@ nav#navigation div.menu {
 	background-clip: border-box;
 	width: 15em;
 	height: 20em;
+	pointer-events: none;
 }
 nav#navigation div.menu[data-open] {
 	top: 115px;
 	opacity: 1;
 	filter: none;
+	pointer-events: all;
 }
 nav#navigation div.menu a {
 	padding: 5px;
