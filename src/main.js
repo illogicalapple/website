@@ -9,4 +9,4 @@ let router = createRouter({
 });
 
 app.use(router);
-app.mount(App);
+app.mount("#app");
