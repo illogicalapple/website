@@ -20,12 +20,13 @@
 			</a>
 		</div>
 		<img src="/menu.svg">
-		<div class="menu"></div>
+		<Menu></Menu>
 	</nav>
 </template>
 
 <script setup>
 import defineProps from "vue";
+import Menu from "./Menu.vue";
 
 defineProps({
 	page: String
