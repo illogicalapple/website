@@ -8,7 +8,7 @@
 			</a>
 		</div>
 		<div style="position: absolute; right: 10px; top: 0px;" class="relative-full-height">
-			<a href="/my-stuff" style="display: table; padding: 0px 20px;" class="relative-full-height float-right option">
+			<a href="/my-stuff" style="display: table; padding: 0px 20px;" class="relative-full-height float-right option stuff-option">
 				<span style="display: table-cell; vertical-align: middle; text-align: center;" class="{{ page == 'stuff' ? 'bold' : '' }}">
 					Stuff I made
 				</span>
@@ -20,10 +20,7 @@
 			</a>
 		</div>
 		<img src="/menu.svg">
-		<div class="menu" style="display: none;">
-			<a href="/">Home</a>
-			<br> <a href="/my-stuff">Stuff I made</a>
-		</div>
+		<div class="menu"></div>
 	</nav>
 </template>
 
