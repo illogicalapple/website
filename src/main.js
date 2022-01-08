@@ -5,7 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 let app = createApp({
 	data: {
-		menuOpen: false;
+		menuOpen: false
 	}
 });
 let router = createRouter({
