@@ -47,23 +47,23 @@ h1, h2, h3, h4, h5, h6 {
 .bold {
 	font-weight: bold;
 }
-a {
+a, router-link {
 	color: black;
 	text-decoration: none;
 }
-#navigation a.option.nope {
+#navigation :is(a, router-link).option.nope {
 	cursor: default;
 }
 
-#navigation a.option span {
+#navigation :is(a, router-link).option span {
 	position: relative;
 }
 
-#navigation :is(a.option:hover[class][class], a.option.active) span::after {
+#navigation :is(a.option:hover[class][class], a.option.active, router-link.option:hover[class][class], router-link.option.active) span::after {
 	width: calc(100% - 10px);
 }
 
-#navigation a.option:not(.nope) span::after {
+#navigation :is(a, router-link).option:not(.nope) span::after {
 	content: "";
 	display: block;
 	margin: auto;
@@ -76,18 +76,18 @@ a {
 	z-index: -1;
 	transition: 0.3s;
 }
-data[data-home] ~ #navigation a.option span[class][class][class]::after {
+data[data-home] ~ #navigation :is(a, router-link).option span[class][class][class]::after {
 	/* transition: unset;
 	width: calc(100% - 10px); */
 }
 
-:root a:hover {
+:root :is(a, router-link):hover {
 	text-decoration: underline;
 	text-decoration-thickness: 0.1em;
 	text-underline-offset: 0.1em;
 }
 
-#navigation a.option[class][class][class][class] {
+#navigation :is(a, router-link).option[class][class][class][class] {
 	text-decoration: unset;
 }
 
@@ -171,14 +171,14 @@ nav#navigation div.menu[data-open] {
 	filter: none;
 	pointer-events: all;
 }
-nav#navigation div.menu a {
+nav#navigation div.menu :is(a, router-link) {
 	padding: 5px;
 	display: inline-block;
 	width: calc(100% + 20px);
 	position: relative;
 	right: 10px;
 }
-nav#navigation div.menu a:hover {
+nav#navigation div.menu :is(a, router-link):hover {
 	text-decoration: none;
 }
 nav#navigation {
