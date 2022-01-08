@@ -12,7 +12,7 @@
 				<span style="display: table-cell; vertical-align: middle; text-align: center;" class="{{ page == 'stuff' ? 'bold' : '' }}">
 					stuff i made
 				</span>
-			</router-link>
+			</a>
 			<router-link to="/" style="display: table; padding: 0px 20px;" class="relative-full-height float-right option home-option">
 				<span style="display: table-cell; vertical-align: middle; text-align: center;" class="{{ page == 'home' ? 'bold' : '' }}">
 					home
