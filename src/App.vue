@@ -6,5 +6,6 @@
 	const menuOpen = ref(false);
 	const toggleMenu = () => {
 		menuOpen.value = !menuOpen.value;
+		alert("test");
 	};
 </script>
