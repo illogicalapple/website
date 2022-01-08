@@ -7,7 +7,7 @@ let app = createApp({
 	data: {
 		menuOpen: false
 	},
-	template: App
+	render: bob => bob(App)
 });
 let router = createRouter({
 	history: createWebHistory(),
