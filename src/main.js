@@ -3,12 +3,7 @@ import App from './App.vue'
 import { routes } from './routes.js'
 import { createRouter, createWebHistory } from 'vue-router'
 
-let app = createApp({
-	data() {
-		return { menuOpen: false };
-	},
-	template: "<router-view />"
-});
+let app = createApp(App);
 let router = createRouter({
 	history: createWebHistory(),
 	routes: import.meta.hot ? [] : routes
