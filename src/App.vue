@@ -3,16 +3,8 @@
 </template>
 <script setup>
 	import { ref } from "vue";
-	export default {
-		setup() {
-			const menuOpen = ref(false);
-			const toggleMenu = () => {
-				menuOpen.value = !menuOpen.value;
-			};
-			return {
-				menuOpen,
-				toggleMenu
-			}
-		}
+	const menuOpen = ref(false);
+	const toggleMenu = () => {
+		menuOpen.value = !menuOpen.value;
 	};
 </script>
