@@ -4,9 +4,9 @@ import { routes } from './routes.js'
 import { createRouter, createWebHistory } from 'vue-router'
 
 let app = createApp({
-	data: {
+	data: () => ({
 		menuOpen: false
-	}
+	})
 });
 let router = createRouter({
 	history: createWebHistory(),
