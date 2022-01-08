@@ -1,5 +1,5 @@
 <template>
-	<div class="menu" style="text-align: left; padding: 1.5em 3em; overflow-y: auto; overflow-x: hidden;">
+	<div class="menu" style="text-align: left; padding: 1.5em 3em; overflow-y: auto; overflow-x: hidden;" :data-open="{ 'bob': menuOpen }">
 		<router-link to="/true-facts">
 			<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">true facts</h2>
 			true facts about everything
