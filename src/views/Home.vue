@@ -10,9 +10,9 @@
 				</span> and I am an <span class="red">
 					apple. 
 				</span>
-				I started making <a href="true-facts" style="color: var(--orange);">true-facts</a> in <time datetime="2020-12">
+				I started making <router-link href="true-facts" style="color: var(--orange);">true-facts</a> in <time datetime="2020-12">
 					December 2020,
-				</time> and I made some other fun <a href="my-stuff" style="color: var(--orange);">stuff</a> later.
+				</time> and I made some other fun <router-link href="my-stuff" style="color: var(--orange);">stuff</a> later.
 				I really like making stuff.
 			<br> <br> Hope you enjoy!
 		</p>
