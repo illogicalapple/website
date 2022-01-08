@@ -165,7 +165,7 @@ nav#navigation div.menu {
 	height: 20em;
 	pointer-events: none;
 }
-nav#navigation div.menu[data-open] {
+nav#navigation div.menu[data-open="bob"] {
 	top: 115px;
 	opacity: 1;
 	filter: none;
