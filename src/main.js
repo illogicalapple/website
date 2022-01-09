@@ -2,6 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { routes } from './routes.js'
 import { createRouter, createWebHistory } from 'vue-router'
+import Head from './components/Head.vue';
+import Menu from './components/Menu.vue';
+import Navbar from './components/Navbar.vue';
 
 let app = createApp(App)
 .component('Head', Head)
