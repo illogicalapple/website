@@ -7,24 +7,10 @@ export let routes = [
 		name: "home",
 	 	meta: {
 			title: "illogicalapple",
-			metaTags: [
-				{
-					name: "description",
-					content: "my website"
-				},
-				{
-					name: "viewport",
-					content: "width=device-width, initial-scale=1.0"
-				},
-				{
-					name: "author",
-					content: "illogicalapple"
-				},
-				{
-					name: "charset",
-					content: "UTF-8"
-				}
-			]
+			metaTags: [{
+				name: "description",
+				content: "my website"
+			}]
 		}
 	},
 	{
@@ -39,16 +25,8 @@ export let routes = [
 					content: "this is a 404 :D"
 				},
 				{
-					name: "viewport",
-					content: "width=device-width, initial-scale=1.0"
-				},
-				{
 					name: "robots",
 					content: "noindex"
-				},
-				{
-					name: "charset",
-					content: "UTF-8"
 				}
 			]
 		}
