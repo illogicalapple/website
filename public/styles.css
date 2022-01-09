@@ -201,3 +201,12 @@ main {
 	top: 85px;
 	left: 0px;
 }
+h1.404 {	
+	font-size: 20vmin;
+	background: url(/apples.png);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-position: center;
+	background-size: 3.5em;
+}
