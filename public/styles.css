@@ -201,7 +201,7 @@ main {
 	top: 85px;
 	left: 0px;
 }
-h1.404 {	
+h1.not-found {	
 	font-size: 20vmin;
 	background: url(/apples.png);
 	background-clip: text;
