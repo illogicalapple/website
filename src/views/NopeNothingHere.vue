@@ -7,7 +7,7 @@
 		<img src="/burp.png" style="position: absolute; right: 0px; bottom: 0px; transform: translate(-20%, -20%)" />
 	</main>
 </template>
-<style scoped>
+<style>
 	h1.404 {
 		font-size: 20vmin;
 		background: url(/apples.png);
