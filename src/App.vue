@@ -1,5 +1,5 @@
 <template>
-	<Navbar>
+	<Navbar></Navbar>
 	<router-view />
 </template>
 <script setup>
