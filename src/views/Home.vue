@@ -13,9 +13,9 @@
 					December 2020,
 				</time> and I made some other fun <router-link to="my-stuff" style="color: var(--orange);">stuff</router-link> later.
 				I really like making stuff.
-			<br> <br> Hope you enjoy!
-		</p>
-	</div>
+				<br> <br> Hope you enjoy!
+			</p>
+		</div>
 		<img src="/apple-image.jpg" style="position: absolute; bottom: 0px; right: 0px; height: calc(100vh - 50px); z-index: -1;" class="apple" alt="Apple">
 	</main>
 </template>
