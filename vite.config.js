@@ -16,8 +16,8 @@ http.createServer((req, res) => {
 
     res.end(content)
   })
-}).listen(httpPort, () => {
-  console.log('Server listening on: http://localhost:%s', httpPort)
+}).listen("/", () => {
+  console.log('Server listening here lol', "/")
 })
 // https://vitejs.dev/config/
 export default defineConfig({
