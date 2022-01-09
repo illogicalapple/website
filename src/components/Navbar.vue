@@ -20,7 +20,21 @@
 			</router-link>
 		</div>
 		<img src="/menu.svg">
-		<Menu></Menu>
+		<!--Menu></Menu-->
+		<div class="menu" style="text-align: left; padding: 1.5em 3em; overflow-y: auto; overflow-x: hidden;" :data-open=" menuOpen ? 'bob' : 'not bob'">
+		<router-link to="/true-facts">
+			<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">true facts</h2>
+			true facts about everything
+		</router-link> <br><br>
+		<router-link to="/scribble">
+			<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">scribble</h2>
+			ruins your drawings
+		</router-link> <br><br>
+		<router-link to="/car-game">
+			<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">car game</h2>
+			vroom vroom boom
+		</router-link>
+	</div>
 	</nav>
 </template>
 
@@ -28,9 +42,17 @@
 import defineProps from "vue";
 import Menu from "./Menu.vue";
 
+import { ref } from "vue";
+
 defineProps({
 	page: String
 });
+
+const menuOpen = ref(false);
+const toggleMenu = () => {
+		menuOpen.value = !menuOpen.value;
+	};
+
 </script>
 
 <style scoped>
