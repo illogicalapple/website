@@ -39,14 +39,7 @@
 </template>
 
 <script setup>
-import defineProps from "vue";
-import Menu from "./Menu.vue";
-
 import { ref } from "vue";
-
-defineProps({
-	page: String
-});
 
 const menuOpen = ref(false);
 const toggleMenu = () => {
