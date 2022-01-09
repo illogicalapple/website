@@ -19,16 +19,10 @@ export let routes = [
 		name: "404",
 	 	meta: {
 			title: "404: not found",
-			metaTags: [
-				{
-					name: "description",
-					content: "this is a 404 :D"
-				},
-				{
-					name: "robots",
-					content: "noindex"
-				}
-			]
+			metaTags: [{
+				name: "robots",
+				content: "noindex"
+			}]
 		}
 	}
 ];
