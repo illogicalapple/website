@@ -19,7 +19,3 @@
 		<img src="/apple-image.jpg" style="position: absolute; bottom: 0px; right: 0px; height: calc(100vh - 50px); z-index: -1;" class="apple" alt="Apple">
 	</main>
 </template>
-
-<script setup>
-import Navbar from "../components/Navbar.vue"
-</script>
