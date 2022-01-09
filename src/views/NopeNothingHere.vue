@@ -7,6 +7,3 @@
 		<img src="/burp.png" style="position: absolute; right: 0px; bottom: 0px; transform: translate(-20%, -20%)" />
 	</main>
 </template>
-<script setup>
-	import Navbar from "../components/Navbar.vue";
-</script>
