@@ -27,7 +27,7 @@
 					<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">{{ page.title }}</h2>
 					{{ page.desc }}
 				</router-link>
-				<span v-if="index < pages.length - 1"><br><br></span>
+				<span v-if="index < pages.length - 1"><br></span>
 				<span v-else><!-- haha no line break sucker --></span>
 			</span>
 		</div>
