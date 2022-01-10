@@ -151,14 +151,13 @@ nav#navigation img {
 nav#navigation div.menu {
 	background-color: white;
 	position: absolute;
-	right: 30px;
+	right: 20px;
 	/* top: 115px; */
 	top: 130px;
 	opacity: 0;
 	transition: 0.3s;
 	transition-property: top, opacity, filter;
 	filter: blur(15px);
-	border-radius: 5px;
 	padding: 5px 10px;
 	text-align: center;
 	border: 1px solid lightgray;
@@ -224,4 +223,14 @@ span.home-blue-underline::after {
 	left: 15px;
 	z-index: -1;
 	transition: 0.3s;
+}
+#navigation a.stuff-option:is(:hover, .active)::before {
+	content: "hitbox hitbox hitbox";
+	width: 15em;
+	display: inline-block;
+	position: absolute;
+	height: 30px;
+	top: 85px;
+	right: 20px;
+	opacity: 0;
 }
