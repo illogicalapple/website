@@ -236,4 +236,5 @@ span.home-blue-underline::after {
 }
 #navigation div.menu::-webkit-scrollbar {
 	width: 0px;
+	display: none;
 }
