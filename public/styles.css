@@ -57,15 +57,15 @@ a, router-link {
 	cursor: default;
 }
 
-#navigation :is(a, router-link).option span {
+#navigation :is(a, router-link).option > span {
 	position: relative;
 }
 
-#navigation :is(a.option:hover[class][class], a.option.active, router-link.option:hover[class][class], router-link.option.active) span::after {
+#navigation :is(a.option:hover[class][class], a.option.active, router-link.option:hover[class][class], router-link.option.active) > span::after {
 	width: calc(100% - 10px);
 }
 
-#navigation :is(a, router-link).option:not(.nope) span::after {
+#navigation :is(a, router-link).option:not(.nope) > span::after {
 	content: "";
 	display: block;
 	margin: auto;
@@ -78,7 +78,7 @@ a, router-link {
 	z-index: -1;
 	transition: 0.3s;
 }
-data[data-home] ~ #navigation :is(a, router-link).option span[class][class][class]::after {
+data[data-home] ~ #navigation :is(a, router-link).option > span[class][class][class]::after {
 	/* transition: unset;
 	width: calc(100% - 10px); */
 }
