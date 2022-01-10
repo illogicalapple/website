@@ -12,6 +12,16 @@
 				<span style="display: table-cell; vertical-align: middle; text-align: center;" class="{{ page == 'stuff' ? 'bold' : '' }}">
 					stuff i made
 				</span>
+				<div class="menu" style="text-align: left; padding: 1.5em 3em; overflow-y: auto; overflow-x: hidden;" :data-open=" menuOpen ? 'bob' : 'not bob'">
+					<span v-for="(page, index) in pages">
+						<router-link :to="page.url">
+							<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">{{ page.title }}</h2>
+							{{ page.desc }}
+						</router-link>
+						<span v-if="index < pages.length - 1"><br></span>
+						<span v-else><!-- haha no line break sucker --></span>
+					</span>
+				</div>
 			</a>
 			<router-link to="/" style="display: table; padding: 0px 20px;" class="relative-full-height float-right option home-option">
 				<span style="display: table-cell; vertical-align: middle; text-align: center;" class="{{ page == 'home' ? 'bold' : '' }}">
@@ -21,16 +31,6 @@
 		</div>
 		<img src="/menu.svg">
 		<!--Menu></Menu-->
-		<div class="menu" style="text-align: left; padding: 1.5em 3em; overflow-y: auto; overflow-x: hidden;" :data-open=" menuOpen ? 'bob' : 'not bob'">
-			<span v-for="(page, index) in pages">
-				<router-link :to="page.url">
-					<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">{{ page.title }}</h2>
-					{{ page.desc }}
-				</router-link>
-				<span v-if="index < pages.length - 1"><br></span>
-				<span v-else><!-- haha no line break sucker --></span>
-			</span>
-		</div>
 	</nav>
 </template>
 
