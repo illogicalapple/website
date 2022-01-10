@@ -22,19 +22,13 @@
 		<img src="/menu.svg">
 		<!--Menu></Menu-->
 		<div class="menu" style="text-align: left; padding: 1.5em 3em; overflow-y: auto; overflow-x: hidden;" :data-open=" menuOpen ? 'bob' : 'not bob'">
-		<router-link to="/true-facts">
-			<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">true facts</h2>
-			true facts about everything
-		</router-link> <br><br>
-		<router-link to="/scribble">
-			<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">scribble</h2>
-			ruins your drawings
-		</router-link> <br><br>
-		<router-link to="/car-game">
-			<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">car game</h2>
-			vroom vroom boom
-		</router-link>
-	</div>
+			<span v-for="(page, index) in pages">
+				<router-link :to="page.url">
+					<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">{{ page.title }}</h2>
+					{{ page.desc }}
+				</router-link> <span v-if="index !== pages.length"><br><br></span>
+			</span>
+		</div>
 	</nav>
 </template>
 
@@ -43,9 +37,25 @@ import { ref } from "vue";
 
 const menuOpen = ref(false);
 const toggleMenu = () => {
-		menuOpen.value = !menuOpen.value;
-	};
-
+	menuOpen.value = !menuOpen.value;
+};
+const pages = [
+	{
+		"url": "/true-facts",
+		"title": "true facts",
+		"desc": "true facts about everything"
+	},
+	{
+		"url": "/scribble",
+		"title": "scribble",
+		"desc": "ruins your drawings"
+	},
+	{
+		"url": "/car-game",
+		"title": "car game",
+		"desc": "vroom vroom boom"
+	}
+];
 </script>
 
 <style scoped>
