@@ -234,3 +234,6 @@ span.home-blue-underline::after {
 	right: 20px;
 	opacity: 0;
 }
+#navigation div.menu::-webkit-scrollbar {
+	width: 0px;
+}
