@@ -165,6 +165,9 @@ nav#navigation div.menu {
 	width: 15em;
 	height: 20em;
 	pointer-events: none;
+	-ms-overflow-style: none;
+	scrollbar-color: transparent transparent;
+	scrollbar-width: none;
 }
 nav#navigation div.menu[data-open="bob"] {
 	top: 115px;
@@ -234,7 +237,13 @@ span.home-blue-underline::after {
 	right: 20px;
 	opacity: 0;
 }
+
 #navigation div.menu::-webkit-scrollbar {
+	width: 0px;
+	display: none;
+}
+
+#navigation div.menu::-moz-scrollbar {
 	width: 0px;
 	display: none;
 }
