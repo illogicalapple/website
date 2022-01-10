@@ -8,7 +8,7 @@
 			</a>
 		</div>
 		<div style="position: absolute; right: 10px; top: 0px;" class="relative-full-height">
-			<a href="javascript:void(0)" style="display: table; padding: 0px 20px; cursor: pointer;" class="relative-full-height float-right option stuff-option" @click="toggleMenu">
+			<a href="javascript:void(0)" style="display: table; padding: 0px 20px; cursor: pointer;" class="relative-full-height float-right option stuff-option" @mouseover="toggleMenu(true)" @mouseleave="toggleMenu(false)">
 				<span style="display: table-cell; vertical-align: middle; text-align: center;" class="{{ page == 'stuff' ? 'bold' : '' }}">
 					stuff i made
 				</span>
@@ -38,8 +38,8 @@
 import { ref } from "vue";
 
 const menuOpen = ref(false);
-const toggleMenu = () => {
-	menuOpen.value = !menuOpen.value;
+const toggleMenu = stuf => {
+	menuOpen.value = stuf;
 };
 const pages = [
 	{
