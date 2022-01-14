@@ -8,12 +8,12 @@
 	const onResize = function onResize(event) {
 		event.target.document.body.style.setProperty("--height", event.target.innerHeight)
 	}
-	onMounted(function() {
-		window.addEventListener("resize", this.onResize);
-		window.addEventListener("load", this.onResize);
+	onMounted(() => {
+		window.addEventListener("resize", onResize);
+		window.addEventListener("load", onResize);
 	});
-	onBeforeUnmount(function() {
-		window.removeEventListener("resize", this.onResize);
-		window.removeEventListener("load", this.onResize);
+	onBeforeUnmount(() => {
+		window.removeEventListener("resize", onResize);
+		window.removeEventListener("load", onResize);
 	});
 </script>
