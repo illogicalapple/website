@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .full-height {
-	height: 100vh;
+	height: var(--height);
 	margin: 0px;
 }
 
@@ -103,7 +103,7 @@ data[data-home] ~ #navigation :is(a, router-link).option > span[class][class][cl
 
 .fullscreen {
 	width: 100vw;
-	height: 100vh;
+	height: var(--height);
 	margin: 0px;
 }
 body[data-dark-mode] {
@@ -199,7 +199,7 @@ input:focus {
 	border-color: var(--orange);
 }
 main {
-	height: calc(100vh - 85px);
+	height: calc(var(--height) - 85px);
 	width: 100vw;
 	position: absolute;
 	top: 85px;
