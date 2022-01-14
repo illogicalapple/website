@@ -6,7 +6,7 @@
 	import { ref, onMounted, onBeforeUnmount } from "vue";
 	import Navbar from "./components/Navbar.vue";
 	const onResize = function onResize(event) {
-		event.target.document.body.style.setProperty("--height", event.target.innerHeight)
+		event.target.document.body.style.setProperty("--height", event.target.innerHeight + "px")
 	}
 	onMounted(() => {
 		window.addEventListener("resize", onResize);
