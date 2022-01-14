@@ -3,17 +3,17 @@
 	<router-view />
 </template>
 <script setup>
-	import { ref } from "vue";
+	import { ref, onMounted, onBeforeUnmount } from "vue";
 	import Navbar from "./components/Navbar.vue";
 	const onResize = function onResize(event) {
 		event.target.document.body.style.setProperty("--height", event.target.innerHeight)
 	}
-	function onMounted() {
+	onMounted(function() {
 		window.addEventListener("resize", this.onResize);
 		window.addEventListener("load", this.onResize);
-	}
-	function onBeforeUnmount() {
+	});
+	onBeforeUnmount(function() {
 		window.removeEventListener("resize", this.onResize);
 		window.removeEventListener("load", this.onResize);
-	}
+	});
 </script>
