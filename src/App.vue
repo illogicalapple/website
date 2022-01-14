@@ -10,8 +10,12 @@
 	}
 	const interval = ref(0);
 	onMounted(() => {
-		onResize();
-		interval.value = setInterval(onResize, 500);
+		onResize({
+			target: window
+		});
+		interval.value = setInterval(onResize, 500, {
+			target: window
+		});
 		window.addEventListener("resize", onResize);
 		window.addEventListener("load", onResize);
 	});
