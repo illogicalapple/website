@@ -19,9 +19,8 @@
 	const postName = window.location.pathname.substring(6);
 	const found = ref(true);
 	const postData = ref([]);
-	fetch("/blog/entries.json").then(r => r.json()).then(r => postData.value = r.find(e => e.file == postName));
-	onMounted(() => {
-		alert(postName);
+	fetch("/blog/entries.json").then(r => r.json()).then(r => {
+		postData.value = r.find(e => e.file == postName);
 		document.title = postData.value.title;
 		const el = document.createElement("meta");
 		el.setAttribute("name", "description");
@@ -31,8 +30,8 @@
 		el2.setAttribute("name", "author");
 		el2.setAttribute("content", postData.value.author);
 		document.head.appendChild(el2);
+		found.value = Boolean(postData.value);
 	});
-	found.value = Boolean(postData);
 	const post = ref("");
 	fetch(`/blog/${postName}.md`).then(e => e.text()).then(r => post.value = marked.parse(r));
 </script>
