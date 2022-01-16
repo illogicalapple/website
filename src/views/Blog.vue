@@ -13,10 +13,10 @@
 		</div>
 	</main>
 </template>
-<!--script setup>
+<script setup>
 	const _posts = await fetch("../blog/entries.json").then(response => response.json());
 	const posts = _posts.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()); // newest to oldest
-</script-->
+</script>
 <style scoped>
 	.blog-post[data-transparent] {
 		background-color: lightgray;
@@ -28,5 +28,11 @@
 		left: 50%;
 		position: absolute;
 		transform: translateX(-50%);
+	}
+	.blog.blog-container h1 {
+		font-size: 4em;
+	}
+	.blog.blog-container h2 {
+		font-size: 2em;
 	}
 </style>
