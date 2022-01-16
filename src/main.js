@@ -2,9 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { routes } from './routes.js'
 import { createRouter, createWebHistory } from 'vue-router'
-import Head from './components/Head.vue';
-import Menu from './components/Menu.vue';
-import Navbar from './components/Navbar.vue';
+import Head from './components/Head.vue'
+import Menu from './components/Menu.vue'
+import Navbar from './components/Navbar.vue'
 
 let app = createApp(App)
 .component('Head', Head)
@@ -12,25 +12,8 @@ let app = createApp(App)
 .component('Navbar', Navbar);
 let router = createRouter({
 	history: createWebHistory(),
-	routes: import.meta.hot ? [] : routes
+	routes
 })
-
-if (import.meta.hot) {
-	let removeRoutes = []
-
-	for (let route of routes) {
-		removeRoutes.push(router.addRoute(route))
-	}
-
-	import.meta.hot.accept('./routes.js', ({ routes }) => {
-		for (let removeRoute of removeRoutes) removeRoute()
-		removeRoutes = []
-		for (let route of routes) {
-			removeRoutes.push(router.addRoute(route))
-		}
-		router.replace('')
-	})
-}
 router.beforeEach((to, from, next) => {
 
     const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
