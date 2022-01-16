@@ -30,8 +30,10 @@
 		el2.setAttribute("name", "author");
 		el2.setAttribute("content", postData.value.author);
 		document.head.appendChild(el2);
-		found.value = Boolean(postData.value);
+		found.value = postData.value != undefined;
 	});
 	const post = ref("");
-	fetch(`/blog/${postName}.md`).then(e => e.text()).then(r => post.value = marked.parse(r));
+	if(found.value) {
+		fetch(`/blog/${postName}.md`).then(e => e.text()).then(r => post.value = marked.parse(r));
+	}
 </script>
