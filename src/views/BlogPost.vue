@@ -17,7 +17,12 @@
 	import { ref, onMounted } from "vue"
 	const postName = window.location.pathname.substring(6);
 	const found = ref(true);
-	const postData = ref([]);
+	const postData = ref({
+		title: "not found",
+		desc: "not found",
+		author: "not found",
+		created: "not found"
+	});
 	onMounted(function() {
 		fetch("/blog/entries.json").then(r => r.json()).then(r => {
 			postData.value = r.find(e => e.file == postName);
