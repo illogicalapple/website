@@ -10,6 +10,7 @@ let app = createApp(App)
 .component('Head', Head)
 .component('Menu', Menu)
 .component('Navbar', Navbar);
+app.config.globalProperties.window = window;
 let router = createRouter({
 	history: createWebHistory(),
 	routes
