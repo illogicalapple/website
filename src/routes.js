@@ -1,6 +1,6 @@
-import Home from "./views/Home.vue"
-import NopeNothingHere from "./views/NopeNothingHere.vue"
-import Blog from "./views/Blog.vue"
+const Home = require("./views/Home.vue");
+const NopeNothingHere = require("./views/NopeNothingHere.vue");
+const Blog = require("./views/Blog.vue");
 export let routes = [
 	{
 		path: "/",
