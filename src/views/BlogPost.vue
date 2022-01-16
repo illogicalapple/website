@@ -17,7 +17,8 @@
 	import { marked } from "marked"
 	import { ref, onMounted } from "vue"
 	const found = ref(true);
-	const _postData = await fetch("/blog/entries.json").json();
+	const __postData = await fetch("/blog/entries.json");
+	const _postData = await __postData.json();
 	const postData = _postData.find(e => e.file == this.$route.params.postName);
 	onMounted(() => {
 		document.title = postData.title;
@@ -31,6 +32,7 @@
 		document.head.appendChild(el2);
 	});
 	found.value = Boolean(postData);
-	const post = await fetch(`/blog/${this.$route.params.postName}.md`).text();
+	const _post = await fetch(`/blog/${this.$route.params.postName}.md`);
+	const post = await _post.text();
 	const parsedPost = marked.parse(post);
 </script>
