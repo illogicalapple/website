@@ -16,7 +16,7 @@
 	import NopeNothingHere from "./NopeNothingHere.vue"
 	import { marked } from "marked"
 	import { ref, onMounted } from "vue"
-	const found == ref(true);
+	const found = ref(true);
 	const _postData = await fetch("/blog/entries.json").json();
 	const postData = _postData.find(e => e.file == this.$route.params.postName);
 	onMounted(() => {
