@@ -2,12 +2,12 @@
 	<main id="content" style="overflow-y: auto;" v-if="found.value">
 		<article id="article">
 			<header id="header-main">
-				<h1 class="title">{{ postData.title }}</h1>
-				<p class="description">{{ postData.desc }}</p>
-				<span class="author">By {{ postData.author }}</span> &bull;
-				<span class="date">{{ postData.created }}</span>
+				<h1 class="title">{{ postData.value.title }}</h1>
+				<p class="description">{{ postData.value.desc }}</p>
+				<span class="author">By {{ postData.value.author }}</span> &bull;
+				<span class="date">{{ postData.value.created }}</span>
 			</header>
-			<div id="article-text" v-html="parsedPost"></div>
+			<div id="article-text" v-html="post"></div>
 		</article>
 	</main>
 	<NopeNothingHere v-else></NopeNothingHere>
@@ -18,23 +18,21 @@
 	import { ref, onMounted } from "vue"
 	const postName = window.location.pathname.substring(6);
 	const found = ref(true);
-	const __postData = await fetch("/blog/entries.json");
-	const _postData = await __postData.json();
-	const postData = _postData.find(e => e.file == postName);
+	const postData = ref([]);
+	fetch("/blog/entries.json").then(r => r.json()).then(r => postData.value = r.find(e => e.file == postName));
 	onMounted(() => {
 		alert(postName);
-		document.title = postData.title;
+		document.title = postData.value.title;
 		const el = document.createElement("meta");
 		el.setAttribute("name", "description");
-		el.setAttribute("content", postData.desc);
+		el.setAttribute("content", postData.value.desc);
 		document.head.appendChild(el);
 		const el2 = document.createElement("meta");
 		el2.setAttribute("name", "author");
-		el2.setAttribute("content", postData.author);
+		el2.setAttribute("content", postData.value.author);
 		document.head.appendChild(el2);
 	});
 	found.value = Boolean(postData);
-	const _post = await fetch(`/blog/${postName}.md`);
-	const post = await _post.text();
-	const parsedPost = marked.parse(post);
+	const post = ref("");
+	fetch(`/blog/${postName}.md`).then(e => e.text()).then(r => post.value = marked.parse(r));
 </script>
