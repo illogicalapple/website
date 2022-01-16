@@ -59,6 +59,10 @@
 		left: 15px;
 		z-index: -1;
 	}
+	main#content .blog.blog-title span::after {
+		width: calc(100% - 60px);
+		left: 30px;
+	}
 	.blog.post h2 span::after {
 		transition: 0.3s;
 		transition-property: width;
