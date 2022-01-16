@@ -13,7 +13,6 @@
 	<NopeNothingHere v-else></NopeNothingHere>
 </template>
 <script setup>
-	import fetch from "node-fetch"
 	import NopeNothingHere from "./NopeNothingHere.vue"
 	import { marked } from "marked"
 	import { ref, onMounted } from "vue"
