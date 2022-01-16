@@ -1,5 +1,5 @@
 <template>
-	<main id="content" style="overflow-y: auto;" v-if="found.value">
+	<main id="content" style="overflow-y: auto;" v-if="found.value !== false">
 		<article id="article">
 			<header id="header-main">
 				<h1 class="title">{{ postData.value.title }}</h1>
@@ -30,7 +30,9 @@
 		el2.setAttribute("name", "author");
 		el2.setAttribute("content", postData.value.author);
 		document.head.appendChild(el2);
-		found.value = postData.value != undefined;
+		if(postData.value !== undefined) {
+			found.value = false;
+		}
 	});
 	const post = ref("");
 	if(found.value) {
