@@ -1,5 +1,6 @@
-import Home from "./views/Home.vue";
-import NopeNothingHere from "./views/NopeNothingHere.vue";
+import Home from "./views/Home.vue"
+import NopeNothingHere from "./views/NopeNothingHere.vue"
+import Blog from "./views/Blog.vue"
 export let routes = [
 	{
 		path: "/",
@@ -10,6 +11,18 @@ export let routes = [
 			metaTags: [{
 				name: "description",
 				content: "my website"
+			}]
+		}
+	},
+	{
+		path: "/blog",
+		component: Blog,
+		name: "blog",
+		meta: {
+			title: "blog",
+			metaTags: [{
+				name: "description",
+				content: "my blog"
 			}]
 		}
 	},
