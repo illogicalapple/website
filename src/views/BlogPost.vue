@@ -16,7 +16,7 @@
 	import NopeNothingHere from "./NopeNothingHere.vue"
 	import { marked } from "marked"
 	import { ref, onMounted } from "vue"
-	const postName = location.pathname.substring(6);
+	const postName = window.location.pathname.substring(6);
 	const found = ref(true);
 	const __postData = await fetch("/blog/entries.json");
 	const _postData = await __postData.json();
