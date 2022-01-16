@@ -1,5 +1,5 @@
 <template>
-	<main id="content" style="overflow-y: auto;" v-if="found.value !== false">
+	<main id="content" style="overflow-y: auto;">
 		<article id="article">
 			<header id="header-main">
 				<h1 class="title">{{ postData.value.title }}</h1>
@@ -10,7 +10,6 @@
 			<div id="article-text" v-html="post"></div>
 		</article>
 	</main>
-	<NopeNothingHere v-else></NopeNothingHere>
 </template>
 <script setup>
 	import NopeNothingHere from "./NopeNothingHere.vue"
