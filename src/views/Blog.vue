@@ -1,10 +1,14 @@
 <template>
-	<main id="content">
+	<main id="content" style="text-align: center;">
 		<div class="blog blog-container">
-			<h1 class="blog blog-title">blog</h1>
+			<h1 class="blog blog-title">
+				<span>blog</span>
+			</h1>
 			<div class="blog posts">
-				<router-link class="blog post" v-for="post in posts" :to="'/blog/' + post.file">
-					<h2 :data-title="post.title" class="blog blog-post title" :data-transparent="!posts">{{ post.title }}</h2>
+				<router-link class="blog post" v-for="post in posts" :to="'/blog/' + post.file" style="display: inline-block; text-decoration: none;">
+					<h2 :data-title="post.title" class="blog blog-post title" :data-transparent="!posts">
+						<span>{{ post.title }}</span>
+					</h2>
 					<p class="blog blog-post desc" :data-transparent="!posts">{{ post.desc }}</p>
 					<span class="blog blog-post creator" :data-transparent="!posts">By {{ post.author }}</span> &bull;
 					<span class="blog blog-post date" :data-transparent="!posts">{{ post.created }}</span>
@@ -43,7 +47,7 @@
 		position: relative;
 		top: 40px;
 	}
-	.blog.post:hover h2::after, blog.blog-title::after {
+	.blog.post:hover h2 span::after, .blog.blog-title span::after {
 		content: "";
 		display: block;
 		margin: auto;
@@ -55,7 +59,7 @@
 		left: 15px;
 		z-index: -1;
 	}
-	.blog.post h2::after {
+	.blog.post h2 span::after {
 		transition: 0.3s;
 		transition-property: width;
 		width: 0px;
