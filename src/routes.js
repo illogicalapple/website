@@ -1,6 +1,7 @@
 import Home from "./views/Home.vue"
 import NopeNothingHere from "./views/NopeNothingHere.vue"
 import Blog from "./views/Blog.vue"
+import BlogPost from "./views/BlogPost.vue"
 export let routes = [
 	{
 		path: "/",
@@ -24,6 +25,14 @@ export let routes = [
 				name: "description",
 				content: "my blog"
 			}]
+		}
+	},
+	{
+		path: "/blog/:postName",
+		component: BlogPost,
+		name: "blog post",
+		meta: {
+			title: "loading... "
 		}
 	},
 	{
