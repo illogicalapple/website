@@ -22,6 +22,7 @@
 	const _postData = await __postData.json();
 	const postData = _postData.find(e => e.file == postName);
 	onMounted(() => {
+		alert(postName);
 		document.title = postData.title;
 		const el = document.createElement("meta");
 		el.setAttribute("name", "description");
