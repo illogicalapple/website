@@ -19,29 +19,31 @@
 	const postName = window.location.pathname.substring(6);
 	const found = ref(true);
 	const postData = ref([]);
-	fetch("/blog/entries.json").then(r => r.json()).then(r => {
-		postData.value = r.find(e => e.file == postName);
-		document.title = postData.value.title;
-		const el = document.createElement("meta");
-		el.setAttribute("name", "description");
-		el.setAttribute("content", postData.value.desc);
-		document.head.appendChild(el);
-		const el2 = document.createElement("meta");
-		el2.setAttribute("name", "author");
-		el2.setAttribute("content", postData.value.author);
-		document.head.appendChild(el2);
-		if(postData.value !== undefined) {
-			found.value = false;
+	onMounted(function() {
+		fetch("/blog/entries.json").then(r => r.json()).then(r => {
+			postData.value = r.find(e => e.file == postName);
+			document.title = postData.value.title;
+			const el = document.createElement("meta");
+			el.setAttribute("name", "description");
+			el.setAttribute("content", postData.value.desc);
+			document.head.appendChild(el);
+			const el2 = document.createElement("meta");
+			el2.setAttribute("name", "author");
+			el2.setAttribute("content", postData.value.author);
+			document.head.appendChild(el2);
+			if(postData.value !== undefined) {
+				found.value = false;
+			}
+		});
+		const post = ref("");
+		if(found.value) {
+			fetch(`/blog/${postName}.md`).then(e => e.text()).then(r => post.value = marked.parse(r));
+		} else {
+			document.title = "404: not found";
+			const el = document.createElement("meta");
+			el.setAttribute("name", "robots");
+			el.setAttribute("content", "noindex");
+			document.head.appendChild(el);
 		}
 	});
-	const post = ref("");
-	if(found.value) {
-		fetch(`/blog/${postName}.md`).then(e => e.text()).then(r => post.value = marked.parse(r));
-	} else {
-		document.title = "404: not found";
-		const el = document.createElement("meta");
-		el.setAttribute("name", "robots");
-		el.setAttribute("content", "noindex");
-		document.head.appendChild(el);
-	}
 </script>
