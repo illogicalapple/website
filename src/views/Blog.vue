@@ -73,4 +73,7 @@
 		z-index: -1;
 		position: absolute;
 	}
+	h1 span, h2 span {
+		position: relative;
+	}
 </style>
