@@ -3,12 +3,12 @@
 		<div class="blog blog-container">
 			<h1 class="blog blog-title">blog</h1>
 			<div class="blog posts">
-				<div class="blog post" v-for="post in posts">
+				<router-link class="blog post" v-for="post in posts" :to="'/blog/' + post.file">
 					<h2 :data-title="post.title" class="blog blog-post title" :data-transparent="!posts">{{ post.title }}</h2>
 					<p class="blog blog-post desc" :data-transparent="!posts">{{ post.desc }}</p>
 					<span class="blog blog-post creator" :data-transparent="!posts">By {{ post.author }}</span> &bull;
 					<span class="blog blog-post date" :data-transparent="!posts">{{ post.created }}</span>
-				</div>
+				</router-link>
 			</div>
 		</div>
 	</main>
@@ -34,5 +34,26 @@
 	}
 	.blog.blog-container h2 {
 		font-size: 2em;
+	}
+	.blog.post {
+		text-align: left;
+		width: calc(100vw - 80px);
+		border: 1px solid lightgray;
+		padding: 40px;
+		position: relative;
+		top: 40px;
+	}
+	.blog.post:hover h2::after, blog.blog-title::after {
+		content: "";
+		display: block;
+		margin: auto;
+		margin-top: -0.65em;
+		height: 0.5em;
+		background-color: #007fff;
+		width: calc(100% - 30px);
+		position: absolute;
+		left: 15px;
+		z-index: -1;
+		transition: 0.3s;
 	}
 </style>
