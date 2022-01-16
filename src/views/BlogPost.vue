@@ -16,10 +16,11 @@
 	import NopeNothingHere from "./NopeNothingHere.vue"
 	import { marked } from "marked"
 	import { ref, onMounted } from "vue"
+	const postName = this.$route.params.postName;
 	const found = ref(true);
 	const __postData = await fetch("/blog/entries.json");
 	const _postData = await __postData.json();
-	const postData = _postData.find(e => e.file == globalThis.$route.params.postName);
+	const postData = _postData.find(e => e.file == postName);
 	onMounted(() => {
 		document.title = postData.title;
 		const el = document.createElement("meta");
@@ -32,7 +33,7 @@
 		document.head.appendChild(el2);
 	});
 	found.value = Boolean(postData);
-	const _post = await fetch(`/blog/${globalThis.$route.params.postName}.md`);
+	const _post = await fetch(`/blog/${postName}.md`);
 	const post = await _post.text();
 	const parsedPost = marked.parse(post);
 </script>
