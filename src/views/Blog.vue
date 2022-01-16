@@ -54,6 +54,19 @@
 		position: absolute;
 		left: 15px;
 		z-index: -1;
+	}
+	.blog.post h2::after {
 		transition: 0.3s;
+		transition-property: width;
+		width: 0px;
+		content: "";
+		display: block;
+		margin: auto;
+		margin-top: -0.65em;
+		height: 0.5em;
+		background-color: #007fff;
+		left: 15px;
+		z-index: -1;
+		position: absolute;
 	}
 </style>
