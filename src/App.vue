@@ -1,6 +1,8 @@
 <template>
 	<Navbar></Navbar>
-	<router-view />
+	<Suspense>
+		<router-view />
+	</Suspense>
 </template>
 <script setup>
 	import { ref, onMounted, onBeforeUnmount } from "vue";
