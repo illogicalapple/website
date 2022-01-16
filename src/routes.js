@@ -16,7 +16,7 @@ export let routes = [
 	},
 	{
 		path: "/blog",
-		component: Home,
+		component: Blog,
 		name: "blog",
 		meta: {
 			title: "blog",
