@@ -24,7 +24,7 @@
 		created: "not found"
 	});
 	const post = ref("");
-	window.addEventListener("load", function() {
+	onMounted(function() {
 		fetch("/blog/entries.json").then(r => r.json()).then(function(r) {
 			postData.value = r.find(e => e.file == postName);
 			document.title = postData.value.title;
