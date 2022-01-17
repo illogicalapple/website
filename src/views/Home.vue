@@ -1,7 +1,7 @@
 <template>
 	<main id="content" style="--forty: calc(0.4 * var(--height));">
 		<transition name="image-zoom">
-			<img src="/apples-cropped.png" style="height: 30vw; top: 50%; position: absolute; transform: translateY(-50%); left: 15vw;">
+			<img src="/apples-cropped.png" style="height: min(30vw, var(--forty)); top: 50%; position: absolute; transform: translateY(-50%); left: 15vw;">
 		</transition>
 		<div class="text" style="left: calc(30vw + min(30vw, var(--forty))); position: absolute; width: 25vw; top: 50%; transform: translateY(-50%);">
 			<h1>
