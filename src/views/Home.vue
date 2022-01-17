@@ -16,7 +16,7 @@
 			</p>
 		</div>
 	</main>
-</template>
+</template> <!-- doesn't work -->
 <style scoped>
 	.image-zoom-enter-active,
 	.image-zoom-leave-active,
