@@ -12,7 +12,6 @@
 	</main>
 </template>
 <script setup>
-	import NopeNothingHere from "./NopeNothingHere.vue"
 	import { marked } from "marked"
 	import { ref, onMounted } from "vue"
 	const postName = window.location.pathname.substring(6);
@@ -42,14 +41,15 @@
 		});
 		if(found.value) {
 			fetch(`/blog/${postName}.md`).then(e => e.text()).then(r => post.value = marked.parse(r));
-			alert(post.value);
+			alert(post.value); // ROP
 		} else {
 			document.title = "404: not found";
 			const el = document.createElement("meta");
 			el.setAttribute("name", "robots");
 			el.setAttribute("content", "noindex");
 			document.head.appendChild(el);
-			alert("not found");
+			alert("not found"); // ROP
+			this.$router.push("/not-found?from=blog");
 		}
 	});
 </script>
