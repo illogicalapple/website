@@ -37,7 +37,7 @@
 			found.value = false;
 		}
 		if(found.value) {
-			const hjkl = fetch(`/blog/${postName}.md`).then(e => e.text());
+			const hjkl = await fetch(`/blog/${postName}.md`).then(e => e.text());
 			post.value = marked.parse(hjkl);
 		} else {
 			document.title = "404: not found";
