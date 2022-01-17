@@ -41,7 +41,6 @@
 			if(found.value) {
 				fetch(`/blog/${postName}.md`).then(e => e.text()).then(r => {
 					post.value = marked.parse(r);
-					alert(post.value); // ROP
 				});
 			} else {
 				document.title = "404: not found";
@@ -49,7 +48,6 @@
 				el.setAttribute("name", "robots");
 				el.setAttribute("content", "noindex");
 				document.head.appendChild(el);
-				alert("not found"); // ROP
 				this.$router.push("/not-found?from=blog");
 			}
 		});
