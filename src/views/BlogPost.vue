@@ -23,7 +23,8 @@
 		author: "not found",
 		created: "not found"
 	});
-	onMounted(function() {
+	const post = ref("");
+	window.addEventListener("load", function() {
 		fetch("/blog/entries.json").then(r => r.json()).then(function(r) {
 			postData.value = r.find(e => e.file == postName);
 			document.title = postData.value.title;
@@ -39,7 +40,6 @@
 				found.value = false;
 			}
 		});
-		const post = ref("");
 		if(found.value) {
 			fetch(`/blog/${postName}.md`).then(e => e.text()).then(r => post.value = marked.parse(r));
 		} else {
