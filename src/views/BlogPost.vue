@@ -35,7 +35,7 @@
 			el2.setAttribute("name", "author");
 			el2.setAttribute("content", postData.value.author);
 			document.head.appendChild(el2);
-			if(postData.value !== undefined) {
+			if(postData.value == undefined) {
 				found.value = false;
 			}
 			if(found.value) {
