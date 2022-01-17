@@ -29,5 +29,6 @@
 	onBeforeUnmount(() => {
 		window.removeEventListener("resize", onResize);
 		window.removeEventListener("load", onResize);
+		clearInterval(interval.value);
 	});
 </script>
