@@ -7,7 +7,7 @@
 				<span class="author">By {{ postData.value.author }}</span> &bull;
 				<span class="date">{{ postData.value.created }}</span>
 			</header>
-			<div id="article-text" v-html="post.value"></div>
+			<div id="article-text" :v-html="post.value"></div>
 		</article>
 	</main>
 </template>
