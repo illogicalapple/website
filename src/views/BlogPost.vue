@@ -49,7 +49,7 @@
 				this.$router.push("/not-found?from=blog");
 			}
 		} catch(error) {
-			alert(error.message);
+			window.alert(error.message);
 		}
 	});
 </script>
