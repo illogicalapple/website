@@ -20,8 +20,8 @@
 		author: "not found",
 		created: "not found"
 	});
-	const post = ref("");
-	onMounted(async function() {
+	const post = ref("<h1>hello</h1>");
+	/* onMounted(async function() {
 		try {
 			const asdf = await fetch("/blog/entries.json").then(r => r.json());
 			postData.value = asdf.find(e => e.file == postName);
@@ -51,5 +51,5 @@
 		} catch(error) {
 			window.alert(error.message);
 		}
-	});
+	}); */
 </script>
