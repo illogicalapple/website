@@ -40,7 +40,7 @@ export let routes = [
 			}]
 		}
 	},
-	{
+	/*{
 		path: "/online-piano",
 		component: JoinPiano,
 		name: "online piano",
@@ -51,7 +51,7 @@ export let routes = [
 				content: "a piano thats online"
 			}]
 		}
-	},
+	},*/
 	{
 		path: "/blog/:postName",
 		component: BlogPost,
