@@ -2,6 +2,7 @@ import Home from "./views/Home.vue"
 import NopeNothingHere from "./views/NopeNothingHere.vue"
 import Blog from "./views/Blog.vue"
 import BlogPost from "./views/BlogPost.vue"
+import Piano from "./views/Piano.vue"
 export let routes = [
 	{
 		path: "/",
@@ -24,6 +25,18 @@ export let routes = [
 			metaTags: [{
 				name: "description",
 				content: "my blog"
+			}]
+		}
+	},
+	{
+		path: "/online-piano",
+		component: Piano,
+		name: "online piano",
+		meta: {
+			title: "online piano",
+			metaTags: [{
+				name: "description",
+				content: "a piano thats online"
 			}]
 		}
 	},
