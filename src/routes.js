@@ -29,8 +29,20 @@ export let routes = [
 		}
 	},
 	{
-		path: "/online-piano",
+		path: "/online-piano/:id",
 		component: Piano,
+		name: "online piano",
+		meta: {
+			title: "online piano",
+			metaTags: [{
+				name: "description",
+				content: "a piano thats online"
+			}]
+		}
+	},
+	{
+		path: "/online-piano",
+		component: JoinPiano,
 		name: "online piano",
 		meta: {
 			title: "online piano",
