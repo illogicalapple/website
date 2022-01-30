@@ -45,8 +45,10 @@
 	const userid = gethex(13);
 	const notes = ref([]);
 	const playing = ref([]);
-	const pianoid = useRoute().query.id;
-	const socket = io("wss://websocket-piano-server.herokuapp.com/api/socketio");
+	const pianoid = useRoute().params.id;
+	const socket = io("wss://websocket-piano-server.herokuapp.com/api/socketio", {
+		withCredentials: true
+	});
 	socket.on("connect", () => socket.join(id));
 	const startNote = function(note) {
 		if(!notes.value.includes(note)) {
