@@ -16,7 +16,6 @@
 	import { ref } from "vue"
 	import { useRoute } from "vue-router"
 	import * as Tone from "tone"
-	import { randomBytes } from "crypto"
 	import * as io from "socket.io-client"
 	const keys = {
 		white: [
@@ -42,7 +41,8 @@
 		]
 	};
 	const blackParentStyle = "position: absolute; transform: translate(-50%, calc(-25% + 0.5em)); z-index: 2000;";
-	const userid = randomBytes(16).toString("hex");
+	const gethex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+	const userid = gethex(13);
 	const notes = ref([]);
 	const playing = ref([]);
 	const pianoid = useRoute().query.id;
