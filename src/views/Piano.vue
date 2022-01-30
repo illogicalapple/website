@@ -16,8 +16,8 @@
 	import { ref } from "vue"
 	import { useRoute } from "vue-router"
 	import * as Tone from "tone"
-	const { randomBytes } = require("crypto");
-	const io = require("socket.io-client");
+	import { randomBytes } from "crypto"
+	import * as io from "socket.io-client"
 	const keys = {
 		white: [
 			"C4",
