@@ -16,7 +16,7 @@
 	import { ref } from "vue"
 	import { useRoute } from "vue-router"
 	import * as Tone from "tone"
-	import * as io from "socket.io-client"
+	import { io } from "socket.io-client"
 	const keys = {
 		white: [
 			"C4",
