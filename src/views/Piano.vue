@@ -91,4 +91,11 @@
 .key-black:active {
 	filter: brightness(1.2);
 }
+iframe#sound {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	border: none;
+	box-shadow: 0px 0px 0px transparent;
+}
 </style>
