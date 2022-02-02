@@ -10,13 +10,12 @@
 				</div>
 			</div>
 		</div>
+		<iframe id="sound" :src="'https://websocket-piano-server.herokuapp.com/socketio?id=' + window.encodeURIComponent(pianoid)" ref="iframe"></iframe>
 	</main>
 </template>
 <script setup>
 	import { ref } from "vue"
 	import { useRoute } from "vue-router"
-	import * as Tone from "tone"
-	import { io } from "socket.io-client"
 	const keys = {
 		white: [
 			"C4",
@@ -40,47 +39,23 @@
 			"A#4"
 		]
 	};
+	const iframe = ref(null);
 	const blackParentStyle = "position: absolute; transform: translate(-50%, calc(-25% + 0.5em)); z-index: 2000;";
-	const gethex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
-	const userid = gethex(13);
-	const notes = ref([]);
-	const playing = ref([]);
 	const pianoid = useRoute().params.id;
-	const socket = io("wss://websocket-piano-server.herokuapp.com/api/socketio", {
-		withCredentials: true
-	});
-	socket.on("connect", () => socket.join(id));
 	const startNote = function(note) {
-		if(!notes.value.includes(note)) {
-			notes.value.push(note);
-			socket.to(id).emit("note-start", {
-				user: userid,
-				note
-			});
+		const data = {
+			type: "note-start",
+			note
 		}
+		iframe.value.contentWindow.postMessage(JSON.stringify(data), window.location.origin)
 	};
 	const endNote = function(note) {
-		if(notes.value.includes(note)) {
-			notes.value.filter(e => !e == note);
-			socket.to(id).emit("note-end", {
-				user: userid,
-				note
-			});
+		const data = {
+			type: "note-end",
+			note
 		}
-	}
-	socket.on("note-start", function(stuff) {
-		if(!playing.value[stuff.user]) {
-			playing.value[stuff.user] = new Tone.PolySynth(Tone.Synth).toDestination();
-		}
-		playing.value[stuff.user].triggerAttack(stuff.note);
-	});
-	socket.on("note-end", function(stuff) {
-		if(!playing.value[stuff.user]) {
-			playing.value[stuff.user] = new Tone.PolySynth(Tone.Synth).toDestination();
-		} else {
-			playing.value[stuff.user].triggerRelease(stuff.note);
-		}
-	});
+		iframe.value.contentWindow.postMessage(JSON.stringify(data), window.location.origin)
+	};
 </script>
 <style scoped>
 .key-white {
