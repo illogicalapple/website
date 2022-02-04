@@ -47,6 +47,7 @@
 			type: "note-start",
 			note
 		}
+		console.log("sending message");
 		iframe.value.contentWindow.postMessage(JSON.stringify(data), window.location.origin)
 	};
 	const endNote = function(note) {
@@ -54,6 +55,7 @@
 			type: "note-end",
 			note
 		}
+		console.log("sending message");
 		iframe.value.contentWindow.postMessage(JSON.stringify(data), window.location.origin)
 	};
 </script>
