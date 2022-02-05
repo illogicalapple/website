@@ -48,6 +48,8 @@
 			note
 		}
 		console.log("sending message");
+		console.log(iframe.value);
+		console.log(iframe);
 		iframe.value.contentWindow.postMessage(JSON.stringify(data), window.location.origin)
 	};
 	const endNote = function(note) {
@@ -56,6 +58,8 @@
 			note
 		}
 		console.log("sending message");
+		console.log(iframe.value);
+		console.log(iframe);
 		iframe.value.contentWindow.postMessage(JSON.stringify(data), window.location.origin)
 	};
 </script>
