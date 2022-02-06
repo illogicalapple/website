@@ -27,7 +27,7 @@
 </template>
 <script setup>
 	import { compress, decompress } from "../modules/scribble/compress.js" // compress, decompress
-	import { ref, onBeforeUnmount } from "vue"
+	import { ref, onBeforeUnmount, onMounted } from "vue"
 	const drawing = ref({
 		title: "untitled",
 		destroy: 20,
@@ -56,6 +56,7 @@
 		}
 	}
 	const render = function(draw, destroy) {
+		canvas.value.width += 0;
 		let rendering = draw || drawing.value.frames[0];
 		let destroyed = destroy || scribbled.value;
 		let context = canvas.value.getContext("2d");
@@ -112,9 +113,19 @@
 		drawing.value.frames[0].push(position);
 		if(!scribbled.value) render();
 	};
+	const onWindowResize = function() {
+		canvas.value.width = window.innerWidth;
+		canvas.value.height = window.innerHeight - (85 * 2);
+	}
+	onMounted(function() {
+		window.addEventListener("load", onWindowResize);
+		window.addEventListener("resize", onWindowResize);
+	});
 	onBeforeUnmount(function() {
 		clearInterval(interval.value);
 		interval.value = null;
+		window.removeEventListener("load", onWindowResize);
+		window.removeEventListener("resize", onWindowResize);
 	});
 </script>
 <style scoped>
@@ -146,5 +157,9 @@
 	div.color {
 		border-radius: 50%;
 		background-color: black;
+	}
+	canvas#drawing {
+		width: 100%;
+		height: 100%;
 	}
 </style>
