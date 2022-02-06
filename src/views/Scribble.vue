@@ -58,7 +58,7 @@
 	const render = function(draw, destroy) {
 		let rendering = draw || drawing.value.frames[0];
 		let destroyed = destroy || scribbled.value;
-		let context = canvas.getContext("2d");
+		let context = canvas.value.getContext("2d");
 		let moved = false;
 		context.strokeStyle = "black";
 		context.lineCap = "round";
@@ -84,7 +84,7 @@
 		switch(type) {
 			case "image":
 				render();
-				let uri1 = canvas.toDataURL("image/png");
+				let uri1 = canvas.value.toDataURL("image/png");
 				downloadAnchor.href = uri1;
 				downloadAnchor.click();
 				break;
@@ -124,11 +124,17 @@
 		bottom: 0px;
 		left: 0px;
 		padding-left: 30px;
+		display: block;
+		border-top: 1px solid lightgray;
+		width: 100%;
 	}
 	div.menu-flexbox {
 		display: flex;
 		flex-wrap: nowrap;
 		gap: 30px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 	div.menu-flexbox > * {
 		height: 30px;
