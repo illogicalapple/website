@@ -23,14 +23,14 @@ export function compress(data) {
 export function decompress(data) {
 	const head = data.split("\n")[0];
 	const title = head.split(":")[0];
-	const destroy = parseInt(head.substring(head.indexOf(":")).split("v")[0]);
+	const destroy = parseInt(head.substring(head.indexOf(":")).split("v")[0], 36);
 	const version = parseInt(head.substring(head.indexOf(":")).split("v")[1]);
 	const body = data.substring(data.indexOf("\n"));
 	switch(version) {
 		case 1:
 			const frames = body.split("\n").map(e => {
 				return e.split(";").map(e => {
-					if(e.includes(",")) return e.split(",");
+					if(e.includes(",")) return e.split(",").map(e => parseInt(e, 36));
 					return e == "^" ? "UP" : "DOWN";
 				});
 			});
