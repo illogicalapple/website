@@ -84,13 +84,13 @@
 		switch(type) {
 			case "image":
 				render();
-				let uri = canvas.toDataURL("image/png");
-				downloadAnchor.href = uri;
+				let uri1 = canvas.toDataURL("image/png");
+				downloadAnchor.href = uri1;
 				downloadAnchor.click();
 				break;
 			case "json":
-				let uri = "data:application/json;," + encodeURIComponent(compress(drawing.value));
-				downloadAnchor.href = uri;
+				let uri2 = "data:application/json;," + encodeURIComponent(compress(drawing.value));
+				downloadAnchor.href = uri2;
 				downloadAnchor.click();
 				break;
 		}
