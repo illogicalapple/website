@@ -3,6 +3,7 @@ import NopeNothingHere from "./views/NopeNothingHere.vue"
 import Blog from "./views/Blog.vue"
 import BlogPost from "./views/BlogPost.vue"
 import Piano from "./views/Piano.vue"
+import Scribble from "./views/Scribble.vue"
 export let routes = [
 	{
 		path: "/",
@@ -13,6 +14,18 @@ export let routes = [
 			metaTags: [{
 				name: "description",
 				content: "my website"
+			}]
+		}
+	},
+	{
+		path: "/scribble",
+	 	component: Scribble,
+		name: "scribble",
+	 	meta: {
+			title: "scribble",
+			metaTags: [{
+				name: "description",
+				content: "destroys your drawing for you... you're welcome"
 			}]
 		}
 	},
