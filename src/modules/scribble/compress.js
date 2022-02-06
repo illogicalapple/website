@@ -4,7 +4,7 @@ export function compress(data) {
 	const title = data.title || "untitled";
 	const frames = data.frames;
 	if(!/^[a-zA-Z0-9_-\s]*$/.test(title)) throw new Error("must only have letters, numbers, underscores, dashes, and spaces");
-	var stuff = `${title}:${destroy.toString(36)}v${version}`;
+	var stuff = `${title}:${destroy.toString(36)}V${version}`;
 	data.frames.forEach(drawing => {
 		stuff += "\n";
 		drawing.forEach(point => {
@@ -23,8 +23,8 @@ export function compress(data) {
 export function decompress(data) {
 	const head = data.split("\n")[0];
 	const title = head.split(":")[0];
-	const destroy = parseInt(head.substring(head.indexOf(":")).split("v")[0], 36);
-	const version = parseInt(head.substring(head.indexOf(":")).split("v")[1]);
+	const destroy = parseInt(head.substring(head.indexOf(":")).split("V")[0], 36);
+	const version = parseInt(head.substring(head.indexOf(":")).split("V")[1]);
 	const body = data.substring(data.indexOf("\n"));
 	switch(version) {
 		case 1:
