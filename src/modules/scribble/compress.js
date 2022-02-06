@@ -1,3 +1,4 @@
+// EXAMPLE compress({frames: [["DOWN", "UP"]]})
 export function compress(data) {
 	const destroy = parseInt(data.destroy) || 50;
 	const version = 1;
@@ -9,7 +10,7 @@ export function compress(data) {
 		stuff += "\n";
 		drawing.forEach(point => {
 			if(point = "DOWN") stuff += "_;";
-			else if(point = "UP") stuff += "^;";
+			else if(point == "UP") stuff += "^;";
 			else {
 				stuff += point[0].toString(36);
 				stuff += ",";
