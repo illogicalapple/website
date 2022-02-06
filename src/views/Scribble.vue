@@ -50,9 +50,9 @@
 	const warp = (e, s, a) => [e[0] + Math.sin(Date.now() * s + e[1]) * a, e[1] + Math.sin(Date.now() * s + e[0]) * a];
 	const location = function(event) { // get location of the touch/mouse event
 		if(event instanceof TouchEvent) {
-			return [ event.touches[0].clientX, event.touches[0].clientY ]; // single touch im not bothering to do multiple :p
+			return [ event.touches[0].clientX, event.touches[0].clientY - 85 ]; // single touch im not bothering to do multiple :p
 		} else {
-			return [ event.clientX, event.clientY ];
+			return [ event.clientX, event.clientY - 85 ];
 		}
 	}
 	const render = function(draw, destroy) {
@@ -60,6 +60,9 @@
 		let destroyed = destroy || scribbled.value;
 		let context = canvas.getContext("2d");
 		let moved = false;
+		context.strokeStyle = "black";
+		context.lineCap = "round";
+		context.lineWidth = 5;
 		context.beginPath();
 		let down = false;
 		let _warp = destroyed ? warp : e => e
