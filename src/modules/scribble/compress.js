@@ -27,7 +27,7 @@ export function decompress(data) {
 	const titlehead = head.split(":");
 	const title = titlehead.splice(0, 1)[0];
 	const other = titlehead[0].split("V");
-	const destroy = parseInt(other.splice(0, 1)[0]), 36);
+	const destroy = parseInt(other.splice(0, 1)[0], 36);
 	const version = parseInt(other[0]);
 	switch(version) {
 		case 1:
