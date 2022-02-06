@@ -22,11 +22,13 @@ export function compress(data) {
 	return stuff;
 }
 export function decompress(data) {
-	const head = data.split("\n")[0];
-	const title = head.split(":")[0];
-	const destroy = parseInt(head.substring(head.indexOf(":")).split("V")[0], 36);
-	const version = parseInt(head.substring(head.indexOf(":")).split("V")[1]);
-	const body = data.substring(data.indexOf("\n"));
+	const body = data.split("\n");
+	const head = body.splice(0, 1)[0];
+	const titlehead = head.split(":");
+	const title = titlehead.splice(0, 1)[0];
+	const other = titlehead[0].split("V");
+	const destroy = parseInt(other.splice(0, 1)[0]), 36);
+	const version = parseInt(other[0]);
 	switch(version) {
 		case 1:
 			const frames = body.split("\n").map(e => {
