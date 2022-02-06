@@ -26,8 +26,8 @@
 	</main>
 </template>
 <script setup>
-	import * from "../modules/scribble/compress.js" // compress, decompress
-	import { ref, onMounted, onBeforeUnmount } from "vue"
+	import { compress, decompress } from "../modules/scribble/compress.js" // compress, decompress
+	import { ref, onBeforeUnmount } from "vue"
 	const drawing = ref({
 		title: "untitled",
 		destroy: 20,
