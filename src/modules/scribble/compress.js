@@ -31,7 +31,7 @@ export function decompress(data) {
 	const version = parseInt(other[0]);
 	switch(version) {
 		case 1:
-			const frames = body.split("\n").map(e => {
+			const frames = body.map(e => {
 				return e.split(";").map(e => {
 					if(e.includes(",")) return e.split(",").map(e => parseInt(e, 36));
 					return e == "^" ? "UP" : "DOWN";
