@@ -1,7 +1,7 @@
 export function compress(data) {
-	const destroy = parseInt(data.destroy) : 50;
+	const destroy = parseInt(data.destroy) || 50;
 	const version = 1;
-	const title = data.title : "untitled";
+	const title = data.title || "untitled";
 	const frames = data.frames;
 	if(!/^[a-zA-Z0-9_-\s]*$/.test(title)) throw new Error("must only have letters, numbers, underscores, dashes, and spaces");
 	var stuff = `${title}:${destroy.toString(36)}v${version}`;
