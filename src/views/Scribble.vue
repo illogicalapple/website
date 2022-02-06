@@ -21,7 +21,7 @@
 				<img src="../assets/scribble/normal.svg" @click="toggleScribble(false)">
 				<img src="../assets/scribble/scribblified.svg" @click="toggleScribble(true)">
 			</div>
-			<a style="opacity: 0; display: inline-block; width: 0px; height: 0px;" ref="downloadAnchor" download>
+			<a style="opacity: 0; display: inline-block; width: 0px; height: 0px;" ref="downloadAnchor" download></a>
 		</footer>
 	</main>
 </template>
