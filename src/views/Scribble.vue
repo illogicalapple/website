@@ -158,8 +158,4 @@
 		border-radius: 50%;
 		background-color: black;
 	}
-	canvas#drawing {
-		width: 100%;
-		height: 100%;
-	}
 </style>
