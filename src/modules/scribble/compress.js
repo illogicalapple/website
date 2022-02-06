@@ -9,7 +9,7 @@ export function compress(data) {
 	data.frames.forEach(drawing => {
 		stuff += "\n";
 		drawing.forEach(point => {
-			if(point = "DOWN") stuff += "_;";
+			if(point == "DOWN") stuff += "_;";
 			else if(point == "UP") stuff += "^;";
 			else {
 				stuff += point[0].toString(36);
