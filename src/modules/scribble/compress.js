@@ -32,7 +32,7 @@ export function decompress(data) {
 	switch(version) {
 		case 1:
 			const frames = body.map(e => {
-				return e.split(";").map(e => {
+				return e.split(";").slice(0, -1).map(e => {
 					if(e.includes(",")) return e.split(",").map(e => parseInt(e, 36));
 					return e == "^" ? "UP" : "DOWN";
 				});
