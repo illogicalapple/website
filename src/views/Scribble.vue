@@ -108,13 +108,13 @@
 			case "image":
 				render();
 				let uri1 = canvas.value.toDataURL("image/png");
-				downloadAnchor.href = uri1;
-				downloadAnchor.click();
+				downloadAnchor.value.href = uri1;
+				downloadAnchor.value.click();
 				break;
 			case "json":
 				let uri2 = "data:application/json;," + encodeURIComponent(compress(drawing.value));
-				downloadAnchor.href = uri2;
-				downloadAnchor.click();
+				downloadAnchor.value.href = uri2;
+				downloadAnchor.value.click();
 				break;
 		}
 	};
