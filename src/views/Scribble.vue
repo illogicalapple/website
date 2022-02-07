@@ -93,7 +93,7 @@
 		}
 	};
 	const toggleScribble = function(bob) {
-		scribbled.value = bob || !scribbled.value;
+		scribbled.value = bob ?? !scribbled.value;
 		if(interval.value && !scribbled.value) {
 			clearInterval(interval.value);
 			interval.value = null;
@@ -148,6 +148,7 @@
 	onMounted(function() {
 		window.addEventListener("load", onWindowResize);
 		window.addEventListener("resize", onWindowResize);
+		setTimeout(onWindowResize, 200); // to ensure the page has actually loaded
 	});
 	onBeforeUnmount(function() {
 		clearInterval(interval.value);
