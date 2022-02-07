@@ -14,6 +14,7 @@
 			@mousedown="handleMouseDown($event)"
 			@mousemove.prevent="handleMouseMove($event)"
 			@mouseup="handleMouseUp($event)"
+			@load="onWindowResize()"
 		></canvas>
 		<footer class="menu-wrapper">
 			<div class="menu-flexbox">
