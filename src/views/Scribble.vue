@@ -85,7 +85,7 @@
 			context.lineTo(...position);
 			context.stroke();
 		} else {
-			context.moveTo(...e));
+			context.moveTo(...position);
 			oldPosition.value = position;
 		}
 	};
