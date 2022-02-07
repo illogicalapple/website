@@ -120,22 +120,22 @@
 		if(!target.value) target.value = render();
 		const position = location(event);
 		drawing.value.frames[0].push(position);
-		addLine(position);
+		addLine(target.value, position);
 		drawing.value.frames[0].push("DOWN");
-		addLine("DOWN");
+		addLine(target.value, "DOWN");
 	};
 	const handleMouseUp = function(event) {
 		if(!target.value) target.value = render();
 		const position = location(event);
 		drawing.value.frames[0].push(position);
-		addLine(position);
+		addLine(target.value, position);
 		drawing.value.frames[0].push("UP");
-		addLine("UP");
+		addLine(target.value, "UP");
 	};
 	const handleMouseMove = function(event) {
 		if(!target.value) target.value = render();
 		const position = location(event);
-		if(mouse.value) { drawing.value.frames[0].push(position); addLine(position); }
+		if(mouse.value) { drawing.value.frames[0].push(position); addLine(target.value, position); }
 	};
 	const onWindowResize = function() {
 		canvas.value.width = window.innerWidth;
