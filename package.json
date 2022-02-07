@@ -12,7 +12,8 @@
     "marked": "^4.0.10",
     "node-fetch": "^3.1.1",
     "tone": "^14.7.77",
-    "socket.io-client": "^4.4.1"
+    "socket.io-client": "^4.4.1",
+    "file-saver": "^2.0.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.4",
