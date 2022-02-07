@@ -75,7 +75,7 @@
 		});
 		return context;
 	};
-	const addLine(context, position) {
+	const addLine = function(context, position) {
 		if(position == "DOWN") { mouse.value = true; return; }
 		if(position == "UP") { mouse.value = false; return; }
 		if(mouse.value) {
