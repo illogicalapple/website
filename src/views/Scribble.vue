@@ -1,9 +1,9 @@
 <template>
 	<main id="content"
 		@keyup.space="toggleScribble()"
-		@keyup.ctrl.s.prevent="download('image')"
-		@keyup.ctrl.shift.s.prevent="download('json')"
-		@keyup.ctrl.o.prevent="upload()"
+		@keydown.ctrl.s.prevent="download('image')"
+		@keydown.ctrl.shift.s.prevent="download('json')"
+		@keydown.ctrl.o.prevent="upload()"
 	>
 		<canvas
 			id="drawing"
@@ -37,16 +37,6 @@
 	const downloadAnchor = ref(null);
 	const canvas = ref(null);
 	const interval = ref(null);
-	const toggleScribble = function(bob) {
-		scribbled.value = bob || !scribbled.value;
-		if(interval.value && !scribbled.value) {
-			clearInterval(interval.value);
-			interval.value = null;
-		}
-		if(!interval.value && scribbled.value) {
-			interval.value = setInterval(render, 33);
-		}
-	};
 	const warp = (e, s, a) => [e[0] + Math.sin(Date.now() * s + e[1]) * a, e[1] + Math.sin(Date.now() * s + e[0]) * a];
 	const location = function(event) { // get location of the touch/mouse event
 		if(event instanceof TouchEvent) {
@@ -55,30 +45,60 @@
 			return [ event.clientX, event.clientY - 85 ];
 		}
 	}
-	const render = function(draw, destroy) {
+	const target = ref(null);
+	const mouse = ref(false);
+	const oldPosition = ref(false);
+	const render = function() {
 		canvas.value.width += 0;
-		let rendering = draw || drawing.value.frames[0];
-		let destroyed = destroy || scribbled.value;
+		let rendering = drawing.value.frames[0];
+		let destroyed = scribbled.value;
 		let context = canvas.value.getContext("2d");
-		let moved = false;
 		context.strokeStyle = "black";
 		context.lineCap = "round";
 		context.lineWidth = 5;
 		context.beginPath();
 		let down = false;
 		let _warp = destroyed ? warp : e => e
+		let position = false;
 		rendering.forEach(e => {
-			if(e == "DOWN") { down = true; moved = false; return; }
+			if(e == "DOWN") { down = true; return; }
 			if(e == "UP") { down = false; return; }
 			if(down) {
-				if(!moved) context.moveTo(...e);
-				moved = true;
+				context.beginPath();
+				context.moveTo(...(position || e));
+				position = e;
 				context.lineTo(..._warp(e, 0.01, 20));
 				context.stroke();
 			} else {
 				context.moveTo(..._warp(e, 0.01, 20));
 			}
 		});
+		return context;
+	};
+	const addLine(context, position) {
+		if(position == "DOWN") { mouse.value = true; return; }
+		if(position == "UP") { mouse.value = false; return; }
+		if(mouse.value) {
+			context.beginPath();
+			context.moveTo(...(oldPosition.value || position));
+			oldPosition.value = position;
+			context.lineTo(...position);
+			context.stroke();
+		} else {
+			context.moveTo(...e));
+			oldPosition.value = position;
+		}
+	};
+	const toggleScribble = function(bob) {
+		scribbled.value = bob || !scribbled.value;
+		if(interval.value && !scribbled.value) {
+			clearInterval(interval.value);
+			interval.value = null;
+			render();
+		}
+		if(!interval.value && scribbled.value) {
+			interval.value = setInterval(render, 33);
+		}
 	};
 	const upload = () => null;
 	const download = function(type) {
@@ -97,21 +117,25 @@
 		}
 	};
 	const handleMouseDown = function(event) {
+		if(!target.value) target.value = render();
 		const position = location(event);
 		drawing.value.frames[0].push(position);
+		addLine(position);
 		drawing.value.frames[0].push("DOWN");
-		if(!scribbled.value) render();
+		addLine("DOWN");
 	};
 	const handleMouseUp = function(event) {
+		if(!target.value) target.value = render();
 		const position = location(event);
 		drawing.value.frames[0].push(position);
+		addLine(position);
 		drawing.value.frames[0].push("UP");
-		if(!scribbled.value) render();
+		addLine("UP");
 	};
 	const handleMouseMove = function(event) {
+		if(!target.value) target.value = render();
 		const position = location(event);
-		drawing.value.frames[0].push(position);
-		if(!scribbled.value) render();
+		if(mouse.value) { drawing.value.frames[0].push(position); addLine(position); }
 	};
 	const onWindowResize = function() {
 		canvas.value.width = window.innerWidth;
