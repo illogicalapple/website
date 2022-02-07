@@ -179,7 +179,6 @@
 		width: 30px;
 		position: relative;
 		top: 50%;
-		transform: translateY(-50%);
 	}
 	div.color {
 		border-radius: 50%;
