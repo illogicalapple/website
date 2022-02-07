@@ -28,6 +28,7 @@
 <script setup>
 	import { compress, decompress } from "../modules/scribble/compress.js" // compress, decompress
 	import { ref, onBeforeUnmount, onMounted } from "vue"
+	import { saveAs } from "file-saver"
 	const drawing = ref({
 		title: "untitled",
 		destroy: 20,
@@ -66,11 +67,12 @@
 			if(down) {
 				context.beginPath();
 				context.moveTo(...(position || e));
-				position = e;
+				position = _warp(e, 0.01, 20);
 				context.lineTo(..._warp(e, 0.01, 20));
 				context.stroke();
 			} else {
 				context.moveTo(..._warp(e, 0.01, 20));
+				position = _warp(e, 0.01, 20);
 			}
 		});
 		return context;
@@ -140,6 +142,7 @@
 	const onWindowResize = function() {
 		canvas.value.width = window.innerWidth;
 		canvas.value.height = window.innerHeight - (85 * 2);
+		render();
 	}
 	onMounted(function() {
 		window.addEventListener("load", onWindowResize);
