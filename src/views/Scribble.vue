@@ -49,6 +49,7 @@
 	}
 	const target = ref(null);
 	const mouse = ref(false);
+	const touch = ref(false);
 	const oldPosition = ref(false);
 	const render = function() {
 		canvas.value.width += 0;
@@ -78,10 +79,16 @@
 		});
 		return context;
 	};
-	const addLine = function(context, position) {
-		if(position == "DOWN") { mouse.value = true; return; }
-		if(position == "UP") { mouse.value = false; return; }
-		if(mouse.value) {
+	const addLine = function(context, position, type) {
+		if(type) {
+			if(position == "DOWN") { touch.value = true; return; }
+			if(position == "UP") { touch.value = false; return; }
+		}
+		else {
+			if(position == "DOWN") { mouse.value = true; return; }
+			if(position == "UP") { mouse.value = false; return; }
+		}
+		if((type ? mouse : touch).value) {
 			context.beginPath();
 			context.moveTo(...(oldPosition.value || position));
 			oldPosition.value = position;
@@ -123,7 +130,7 @@
 		if(!target.value) target.value = render();
 		const position = location(event);
 		drawing.value.frames[0].push(position);
-		addLine(target.value, position);
+		addLine(target.value, position, event instanceof TouchEvent);
 		drawing.value.frames[0].push("DOWN");
 		addLine(target.value, "DOWN");
 	};
@@ -131,7 +138,7 @@
 		if(!target.value) target.value = render();
 		const position = location(event);
 		drawing.value.frames[0].push(position);
-		addLine(target.value, position);
+		addLine(target.value, position, event instanceof TouchEvent);
 		drawing.value.frames[0].push("UP");
 		addLine(target.value, "UP");
 	};
