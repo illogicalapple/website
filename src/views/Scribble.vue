@@ -11,6 +11,7 @@
 			@touchstart="handleMouseDown($event)"
 			@touchmove.prevent="handleMouseMove($event)"
 			@touchend="handleMouseUp($event)"
+			@touchcancel="handleMouseUp($event)"
 			@mousedown="handleMouseDown($event)"
 			@mousemove.prevent="handleMouseMove($event)"
 			@mouseup="handleMouseUp($event)"
