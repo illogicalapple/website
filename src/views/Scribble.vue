@@ -43,7 +43,7 @@
 	const warp = (e, s, a) => [e[0] + Math.sin(Date.now() * s + e[1]) * a, e[1] + Math.sin(Date.now() * s + e[0]) * a];
 	const location = function(event) { // get location of the touch/mouse event
 		if(event instanceof TouchEvent) {
-			return [ event.changedTouches[0].clientX, event.changedTouches[0].clientY - 85 ]; // single touch im not bothering to do multiple :p
+			return [ (event.touches[0] || event.changedTouches[0]).clientX, (event.touches[0] || event.changedTouches[0]).clientY - 85 ]; // single touch im not bothering to do multiple :p
 		} else {
 			return [ event.clientX, event.clientY - 85 ];
 		}
@@ -82,14 +82,13 @@
 	const addLine = function(context, position) {
 		if(position == "DOWN") { mouse.value = true; return; }
 		if(position == "UP") { mouse.value = false; return; }
-		if(mouse.value && canvas.value.matches(":active")) {
+		if(mouse.value) {
 			context.beginPath();
 			context.moveTo(...(oldPosition.value || position));
 			oldPosition.value = position;
 			context.lineTo(...position);
 			context.stroke();
 		} else {
-			mouse.value = false;
 			context.moveTo(...position);
 			oldPosition.value = position;
 		}
