@@ -82,13 +82,14 @@
 	const addLine = function(context, position) {
 		if(position == "DOWN") { mouse.value = true; return; }
 		if(position == "UP") { mouse.value = false; return; }
-		if(mouse.value) {
+		if(mouse.value && canvas.value.matches(":active")) {
 			context.beginPath();
 			context.moveTo(...(oldPosition.value || position));
 			oldPosition.value = position;
 			context.lineTo(...position);
 			context.stroke();
 		} else {
+			mouse.value = false;
 			context.moveTo(...position);
 			oldPosition.value = position;
 		}
