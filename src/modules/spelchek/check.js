@@ -1,4 +1,4 @@
-export default class Spelchek() {
+export default class Spelchek {
 	constructor(text) {
 		this.text = text;
 		this._text = text;
