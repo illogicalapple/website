@@ -81,7 +81,7 @@ export let routes = [
 		meta: {
 			title: "logicalkumquat"
 		}
-	}
+	},
 	{
 		path: "/:pathMatch(.*)*",
 	 	component: NopeNothingHere,
