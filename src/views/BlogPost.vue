@@ -1,11 +1,11 @@
 <template>
 	<main id="content" style="overflow-y: auto;">
-		<header class="header-main">
+		<!--header class="header-main">
 			<h1 class="title">{{ postData.value.title }}</h1>
 			<p class="description">{{ postData.value.desc }}</p>
 			<span class="author">By {{ postData.value.author }}</span> &bull;
 			<span class="date">{{ postData.value.created }}</span>
-		</header>
+		</header-->
 		<div id="article-text" v-html="post.value"></div>
 	</main>
 </template>
