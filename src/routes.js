@@ -4,6 +4,7 @@ import Blog from "./views/Blog.vue"
 import BlogPost from "./views/BlogPost.vue"
 import Piano from "./views/Piano.vue"
 import Scribble from "./views/Scribble.vue"
+import LogicalKumquat from "./views/classmates/LogicalKumquat.vue"
 export let routes = [
 	{
 		path: "/",
@@ -73,6 +74,14 @@ export let routes = [
 			title: "loading... "
 		}
 	},
+	{
+		path: "/classmates/logicalkumquat",
+		component: LogicalKumquat,
+		name: "logicalkumquat",
+		meta: {
+			title: "logicalkumquat"
+		}
+	}
 	{
 		path: "/:pathMatch(.*)*",
 	 	component: NopeNothingHere,
