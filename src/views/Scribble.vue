@@ -30,6 +30,7 @@
 <script setup>
 	import { compress, decompress } from "../modules/scribble/compress.js" // compress, decompress
 	import { ref, onBeforeUnmount, onMounted } from "vue"
+	import { beforeRouteLeave } from "vue-router"
 	import { saveAs } from "file-saver"
 	const drawing = ref({
 		title: "untitled",
@@ -156,6 +157,11 @@
 		interval.value = null;
 		window.removeEventListener("load", onWindowResize);
 		window.removeEventListener("resize", onWindowResize);
+	});
+	window.onbeforeunload = () => "do you really want to leave? your edits will be lost";
+	beforeRouteLeave((to, from) => {
+		const answer = window.confirm("do you really want to leave? your edits will be lost");
+		if(!answer) return false;
 	});
 </script>
 <style scoped>
