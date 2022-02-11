@@ -1,6 +1,6 @@
 <template>
 	<main id="content"
-		@keyup.space="toggleScribble()"
+		@keydown.space="toggleScribble()"
 		@keydown.ctrl.s.prevent="download('image')"
 		@keydown.ctrl.shift.s.prevent="download('json')"
 		@keydown.ctrl.o.prevent="upload()"
@@ -30,7 +30,7 @@
 <script setup>
 	import { compress, decompress } from "../modules/scribble/compress.js" // compress, decompress
 	import { ref, onBeforeUnmount, onMounted } from "vue"
-	import { beforeRouteLeave } from "vue-router"
+	import { onBeforeRouteLeave } from "vue-router"
 	import { saveAs } from "file-saver"
 	const drawing = ref({
 		title: "untitled",
@@ -159,7 +159,7 @@
 		window.removeEventListener("resize", onWindowResize);
 	});
 	window.onbeforeunload = () => "do you really want to leave? your edits will be lost";
-	beforeRouteLeave((to, from) => {
+	onBeforeRouteLeave((to, from) => {
 		const answer = window.confirm("do you really want to leave? your edits will be lost");
 		if(!answer) return false;
 	});
