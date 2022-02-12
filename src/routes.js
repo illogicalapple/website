@@ -7,7 +7,7 @@ import Scribble from "./views/Scribble.vue"
 import IllogicalBanana from "./views/classmates/IllogicalBanana.vue"
 import Potato from "./views/classmates/Potato.vue"
 import Iciclin from "./views/classmates/Iciclin.vue"
-import Navbar from "./components/Navbar.vue"
+import Navbar from "./components/Navbar.vue" // change navbar with _navbar
 let _routes = [
 	{
 		path: "/",
@@ -80,7 +80,6 @@ let _routes = [
 	{
 		path: "/classmates/illogicalbanana",
 		component: IllogicalBanana,
-		_navbar: "<!-- navbar -->",
 		name: "illogicalbanana",
 		meta: {
 			title: "illogicalbanana"
@@ -89,7 +88,6 @@ let _routes = [
 	{
 		path: "/classmates/potato",
 		component: Potato,
-		_navbar: "<!-- navbar -->",
 		name: "potato",
 		meta: {
 			title: "potato"
@@ -98,7 +96,6 @@ let _routes = [
 	{
 		path: "/classmates/iciclin",
 		component: Iciclin,
-		_navbar: "<!-- navbar -->",
 		name: "Iciclin",
 		meta: {
 			title: "Iciclin"
