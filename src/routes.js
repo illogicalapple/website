@@ -97,7 +97,7 @@ let _routes = [
 	},
 	{
 		path: "/classmates/iciclin",
-		component: LogicalKumquat,
+		component: Iciclin,
 		_navbar: "<!-- navbar -->",
 		name: "Iciclin",
 		meta: {
