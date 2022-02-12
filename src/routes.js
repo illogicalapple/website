@@ -4,8 +4,11 @@ import Blog from "./views/Blog.vue"
 import BlogPost from "./views/BlogPost.vue"
 import Piano from "./views/Piano.vue"
 import Scribble from "./views/Scribble.vue"
-import LogicalKumquat from "./views/classmates/LogicalKumquat.vue"
-export let routes = [
+import IllogicalBanana from "./views/classmates/IllogicalBanana.vue"
+import Potato from "./views/classmates/Potato.vue"
+import Iciclin from "./views/classmates/Iciclin.vue"
+import Navbar from "./components/Navbar.vue"
+let routes = [
 	{
 		path: "/",
 	 	component: Home,
@@ -75,11 +78,30 @@ export let routes = [
 		}
 	},
 	{
-		path: "/classmates/logicalkumquat",
-		component: LogicalKumquat,
-		name: "logicalkumquat",
+		path: "/classmates/illogicalbanana",
+		component: IllogicalBanana,
+		_navbar: "<!-- navbar -->",
+		name: "illogicalbanana",
 		meta: {
-			title: "logicalkumquat"
+			title: "illogicalbanana"
+		}
+	},
+	{
+		path: "/classmates/potato",
+		component: Potato,
+		_navbar: "<!-- navbar -->",
+		name: "potato",
+		meta: {
+			title: "potato"
+		}
+	},
+	{
+		path: "/classmates/iciclin",
+		component: LogicalKumquat,
+		_navbar: "<!-- navbar -->",
+		name: "Iciclin",
+		meta: {
+			title: "Iciclin"
 		}
 	},
 	{
@@ -95,3 +117,12 @@ export let routes = [
 		}
 	}
 ];
+export routes.map(e => {
+	path: e.path,
+	name: e.name,
+	meta: e.meta,
+	components: {
+		default: e.component || e.components.default,
+		navbar: e._navbar || e.components.navbar
+	}
+});
