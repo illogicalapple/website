@@ -8,7 +8,7 @@ import IllogicalBanana from "./views/classmates/IllogicalBanana.vue"
 import Potato from "./views/classmates/Potato.vue"
 import Iciclin from "./views/classmates/Iciclin.vue"
 import Navbar from "./components/Navbar.vue"
-let routes = [
+let _routes = [
 	{
 		path: "/",
 	 	component: Home,
@@ -117,7 +117,7 @@ let routes = [
 		}
 	}
 ];
-export routes.map(e => {
+export let routes = _routes.map(e => {
 	path: e.path,
 	name: e.name,
 	meta: e.meta,
