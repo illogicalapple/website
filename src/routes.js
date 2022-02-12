@@ -117,7 +117,7 @@ let _routes = [
 		}
 	}
 ];
-export let routes = _routes.map(e => {
+export let routes = _routes.map(e => ({
 	path: e.path,
 	name: e.name,
 	meta: e.meta,
@@ -125,4 +125,4 @@ export let routes = _routes.map(e => {
 		default: e.component || e.components.default,
 		navbar: e._navbar || e.components.navbar
 	}
-});
+}));
