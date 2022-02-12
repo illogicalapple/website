@@ -123,6 +123,6 @@ export let routes = _routes.map(e => ({
 	meta: e.meta,
 	components: {
 		default: e.component || e.components.default,
-		navbar: e._navbar || e.components.navbar
+		navbar: (e.components || {}).navbar || e._navbar
 	}
 }));
