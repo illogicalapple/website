@@ -1,13 +1,19 @@
+// me
 import Home from "./views/Home.vue"
 import NopeNothingHere from "./views/NopeNothingHere.vue"
 import Blog from "./views/Blog.vue"
 import BlogPost from "./views/BlogPost.vue"
 import Piano from "./views/Piano.vue"
 import Scribble from "./views/Scribble.vue"
+import Navbar from "./components/Navbar.vue" // change navbar with _navbar
+
+// classmates
 import IllogicalBanana from "./views/classmates/IllogicalBanana.vue"
 import Potato from "./views/classmates/Potato.vue"
 import Iciclin from "./views/classmates/Iciclin.vue"
-import Navbar from "./components/Navbar.vue" // change navbar with _navbar
+import SmileyShrimps from "./views/classmates/SmileyShrimps.vue"
+
+// code
 let _routes = [
 	{
 		path: "/",
@@ -99,6 +105,14 @@ let _routes = [
 		name: "Iciclin",
 		meta: {
 			title: "Iciclin"
+		}
+	},
+	{
+		path: "/classmates/smileyshrimps",
+		component: SmileyShrimps,
+		name: "smileyshrimps",
+		meta: {
+			title: "smileyshrimps"
 		}
 	},
 	{
