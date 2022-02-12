@@ -15,6 +15,9 @@ let router = createRouter({
 	history: createWebHistory(),
 	routes
 })
+
+window.console.log(routes);
+
 router.beforeEach((to, from, next) => {
 
     const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
