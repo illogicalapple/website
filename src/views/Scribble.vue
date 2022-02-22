@@ -22,6 +22,7 @@
 				<div class="color"></div>
 				<img src="../assets/scribble/normal.svg" @click="toggleScribble(false)">
 				<img src="../assets/scribble/scribblified.svg" @click="toggleScribble(true)">
+				<img src="../assets/scribble/eraser.svg">
 			</div>
 			<a style="opacity: 0; display: inline-block; width: 0px; height: 0px;" ref="downloadAnchor" download></a>
 		</footer>
