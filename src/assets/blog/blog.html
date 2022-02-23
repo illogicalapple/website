@@ -13,6 +13,7 @@
 					html: true
 				});
 				el.innerHTML = muchmarkable.render(raw);
+				hljs.highlightAll(); // :o
 			}
 			load(`./markdown/${(new URLSearchParams(location.search)).get("name")}.md`, document.querySelector(".md")).then(() => console.log("done :p"));
 		</script>
