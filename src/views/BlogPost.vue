@@ -1,6 +1,6 @@
 <template>
 	<main id="content" style="overflow-y: auto;">
-		<iframe @load="injectStyles($event.target)" style="width: 100%; height: 100%; border: none; box-shadow: none;" :src="'https://illogicalapple.github.io/blogio?name=' + window.encodeURIComponent(postName)"></iframe>
+		<iframe @load="injectStyles($event.target)" style="border: none; box-shadow: none; width: 100vw; height: calc(var(--height) - 85px); top: 0px; left: 0px; position: absolute;" :src="'https://illogicalapple.github.io/blogio?name=' + window.encodeURIComponent(postName)"></iframe>
 	</main>
 </template>
 <script setup>
