@@ -1,6 +1,6 @@
 <template>
 	<main id="content" style="overflow-y: auto;">
-		<iframe :src="'../assets/blog/blog.html?name=' + window.encodeURIComponent(postName)"></iframe>
+		<iframe :src="'https://illogicalapple.github.io/blogio?name=' + window.encodeURIComponent(postName)"></iframe>
 	</main>
 </template>
 <script setup>
