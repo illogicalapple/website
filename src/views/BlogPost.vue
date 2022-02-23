@@ -1,6 +1,6 @@
 <template>
 	<main id="content" style="overflow-y: auto;">
-		<iframe :src="'https://illogicalapple.github.io/blogio?name=' + window.encodeURIComponent(postName)"></iframe>
+		<iframe @load="injectStyles($event.target)" style="width: 100%; height: 100%; border: none; box-shadow: none;" :src="'https://illogicalapple.github.io/blogio?name=' + window.encodeURIComponent(postName)"></iframe>
 	</main>
 </template>
 <script setup>
@@ -15,6 +15,23 @@
 		created: "not found"
 	});
 	const post = ref("<h1>hello</h1>");
+	const injectStyles = function inject(frame) {
+		const content = frame.contentDocument;
+		const styles = content.createElement("style");
+		styles.innerHTML = `
+			pre code.hljs {
+				border-radius: 5px;
+				font-family: "Source Code Pro", monospace;
+			}
+			.md {
+				font-family: Lato, sans-serif;
+			}
+			body {
+				margin: 40px !important;
+			}
+		`
+		content.head.append(styles);
+	}
 	/* onMounted(async function() {
 		try {
 			const asdf = await fetch("/blog/entries.json").then(r => r.json());
