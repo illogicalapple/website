@@ -16,7 +16,7 @@
 	});
 	const post = ref("<h1>hello</h1>");
 	const injectStyles = function inject(frame) {
-		const content = frame.contentDocument;
+		/*const content = frame.contentDocument;
 		const styles = content.createElement("style");
 		styles.innerHTML = `
 			pre code.hljs {
@@ -30,7 +30,8 @@
 				margin: 40px !important;
 			}
 		`
-		content.head.append(styles);
+		content.head.append(styles);*/
+		console.warn("styles not injected")
 	}
 	/* onMounted(async function() {
 		try {
