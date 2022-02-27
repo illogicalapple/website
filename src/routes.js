@@ -5,14 +5,16 @@ import Blog from "./views/Blog.vue"
 import BlogPost from "./views/BlogPost.vue"
 import Piano from "./views/Piano.vue"
 import Scribble from "./views/Scribble.vue"
-import Navbar from "./components/Navbar.vue" // change navbar with _navbar
-import TrueFacts from "./components/TrueFacts.vue"
+import TrueFacts from "./views/TrueFacts.vue"
 
 // classmates
 import IllogicalBanana from "./views/classmates/IllogicalBanana.vue"
 import Potato from "./views/classmates/Potato.vue"
 import Iciclin from "./views/classmates/Iciclin.vue"
 import SmileyShrimps from "./views/classmates/SmileyShrimps.vue"
+
+// boring
+import Navbar from "./components/Navbar.vue" // change navbar with _navbar
 
 // code
 let _routes = [
