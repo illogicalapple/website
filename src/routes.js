@@ -151,7 +151,7 @@ let _routes = [
 		}
 	}
 ];
-export let routes = _routes.map(e => ({
+export let routes = _routes.map(e => (e.redirect ? e : {
 	path: e.path,
 	name: e.name,
 	meta: e.meta,
