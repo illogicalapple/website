@@ -1,8 +1,8 @@
 <template>
 	<main id="content">
 		<div class="fact-wrapper">
-			<div class="fact">
-				<header style="padding: 40px;">
+			<div class="fact" style="padding: 40px;">
+				<header>
 					<h1 style="font-size: 1.7em;">
 						fact number
 						<span class="number">
@@ -11,9 +11,9 @@
 						</span>
 					</h1>
 				</header>
-				<span class="text" v-text="getText()" style="padding: 40px;"></span>
+				<span class="text" v-text="getText()"></span>
 			</div>
-			<a href="javascript:void(0)" class="nother fact please blue" @click="another()">i want another fact</a>
+			<a href="javascript:void(0)" class="nother fact please blue" @click="another()" style="padding: 40px;">i want another fact</a>
 		</div>
 	</main>
 </template>
