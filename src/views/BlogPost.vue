@@ -5,7 +5,7 @@
 </template>
 <script setup>
 	import { marked } from "marked"
-	import { ref, onMounted } from "vue"
+	import { ref, onMounted, onBeforeUnmount } from "vue"
 	const postName = window.location.pathname.substring(6);
 	const found = ref(true);
 	const postData = ref({
@@ -41,5 +41,10 @@
 		if(!allowed.includes(event.origin)) return;
 		document.title = event.data.title;
 	}
-	onMounted();
+	onMounted(function() {
+		window.addEventListener("message", setTitle);
+	});
+	onBeforeUnmount(function() {
+		window.removeEventListener("message", setTitle);
+	});
 </script>
