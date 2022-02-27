@@ -1,7 +1,7 @@
 <template>
 	<main id="content">
 		<div class="fact-wrapper">
-			<div class="fact" style="padding: 40px;">
+			<div class="fact" style="padding: 40px; margin-bottom: 40px;">
 				<header>
 					<h1 style="font-size: 1.7em;">
 						fact number
