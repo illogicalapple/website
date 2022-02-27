@@ -25,9 +25,13 @@
 	const params = new URLSearchParams(location.search);
 	const number = ref(params.get("id") || String(facts.indexOf(repetition.random(true)) + 1));
 	const text = ref(facts[Number(number.value) - 1]);
+	console.log(number.value);
+	console.log(text.value);
 	const another = function() {
 		number.value = String(facts.indexOf(repetition.random(true)) + 1);
 		text.value = facts[Number(number.value) - 1];
+		console.log(number.value);
+		console.log(text.value);
 	};
 </script>
 <style scoped>
