@@ -6,6 +6,7 @@ import BlogPost from "./views/BlogPost.vue"
 import Piano from "./views/Piano.vue"
 import Scribble from "./views/Scribble.vue"
 import Navbar from "./components/Navbar.vue" // change navbar with _navbar
+import TrueFacts from "./components/TrueFacts.vue"
 
 // classmates
 import IllogicalBanana from "./views/classmates/IllogicalBanana.vue"
@@ -75,6 +76,26 @@ let _routes = [
 			}]
 		}
 	},*/
+	{
+		path: "/true-facts",
+		component: TrueFacts,
+		name: "true facts",
+		meta: {
+			title: "true facts",
+			metaTags: [{
+				name: "description",
+				content: "facts teachers will hate"
+			}]
+		}
+	},
+	{
+		path: "/facts",
+		redirect: "/true-facts"
+	},
+	{
+		path: "/completely-true-facts",
+		redirect: "/true-facts"
+	},
 	{
 		path: "/blog/:postName",
 		component: BlogPost,
