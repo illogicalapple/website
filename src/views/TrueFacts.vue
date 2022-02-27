@@ -4,7 +4,7 @@
 			<div class="fact">
 				<header>
 					<h1 style="font-size: 1.7em;">
-						fact number <span class="number">{{ number.value }}</span>
+						fact number <span class="number">{{ String(number.value) }}</span>
 						<span class="underline"></span> <!-- pseudos weren't working for some reason -->
 					</h1>
 				</header>
