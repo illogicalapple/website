@@ -6,12 +6,12 @@
 					<h1 style="font-size: 1.7em;">
 						fact number
 						<span class="number">
-							{{ number.value }}
+							{{ getNumber() }}
 							<span class="underline"></span>
 						</span>
 					</h1>
 				</header>
-				<span class="text" v-text="text.value"></span>
+				<span class="text" v-text="getText()"></span>
 			</div>
 			<a href="javascript:void(0)" class="nother fact please blue" @click="another()">i want another fact</a>
 		</div>
@@ -23,8 +23,10 @@
 	import facts from "../modules/facts/facts.js"
 	const repetition = new Repetition(facts, 3);
 	const params = new URLSearchParams(location.search);
-	const number = ref(params.get("id") || String(facts.indexOf(repetition.random(true)) + 1));
-	const text = ref(facts[Number(number.value) - 1]);
+	const number = ref("");
+	const text = ref("");
+	number.value = params.get("id") || String(facts.indexOf(repetition.random(true)) + 1);
+	text.value = facts[Number(number.value) - 1];
 	console.log(number.value);
 	console.log(text.value);
 	const another = function() {
@@ -33,6 +35,8 @@
 		console.log(number.value);
 		console.log(text.value);
 	};
+	const getText = () => text.value;
+	const getNumber = () => number.value;
 </script>
 <style scoped>
 	a.nother.fact.please /* lolz */ {
