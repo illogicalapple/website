@@ -44,7 +44,7 @@
 		min-width: min(500px, 100vw);
 		position: absolute;
 		top: 50%;
-		left: 30%
+		left: 30%;
 		transform: translateY(-50%);
 	}
 	span.number::after {
