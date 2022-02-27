@@ -27,7 +27,7 @@
 	const text = ref(facts[Number(number.value) - 1]);
 	const another = function() {
 		number.value = String(facts.indexOf(repetition.random(true)) + 1);
-		text.value = ref(facts[Number(number.value) - 1]);
+		text.value = facts[Number(number.value) - 1];
 	};
 </script>
 <style scoped>
