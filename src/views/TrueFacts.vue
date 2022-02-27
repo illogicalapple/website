@@ -5,6 +5,7 @@
 				<header>
 					<h1 style="font-size: 1.7em;">
 						fact number <span class="number">{{ number.value }}</span>
+						<span class="underline"></span> <!-- pseudos weren't working for some reason -->
 					</h1>
 				</header>
 				<span class="text">{{ text.value }}</span>
@@ -47,8 +48,7 @@
 		left: 30%;
 		transform: translateY(-50%);
 	}
-	span.number::after {
-		content: "";
+	span.number ~ .underline {
 		display: block;
 		margin: auto;
 		margin-top: -0.65em;
