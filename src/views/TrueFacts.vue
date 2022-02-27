@@ -6,12 +6,12 @@
 					<h1 style="font-size: 1.7em;">
 						fact number
 						<span class="number">
-							{{ String(number.value) }}
+							{{ number.value }}
 							<span class="underline"></span>
 						</span>
 					</h1>
 				</header>
-				<span class="text">{{ text.value }}</span>
+				<span class="text" v-text="text.value"></span>
 			</div>
 			<a href="javascript:void(0)" class="nother fact please blue" @click="another()">i want another fact</a>
 		</div>
@@ -55,7 +55,7 @@
 		left: 30%;
 		transform: translateY(-50%);
 	}
-	span.number ~ .underline {
+	span.number .underline {
 		display: block;
 		margin: auto;
 		margin-top: -0.65em;
