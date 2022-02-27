@@ -4,8 +4,11 @@
 			<div class="fact">
 				<header>
 					<h1 style="font-size: 1.7em;">
-						fact number <span class="number">{{ String(number.value) }}</span>
-						<span class="underline"></span> <!-- pseudos weren't working for some reason -->
+						fact number
+						<span class="number">
+							{{ String(number.value) }}
+							<span class="underline"></span>
+						</span>
 					</h1>
 				</header>
 				<span class="text">{{ text.value }}</span>
@@ -20,7 +23,7 @@
 	import facts from "../modules/facts/facts.js"
 	const repetition = new Repetition(facts, 3);
 	const params = new URLSearchParams(location.search);
-	const number = ref(params.get("id") ?? String(facts.indexOf(repetition.random(true)) + 1));
+	const number = ref(params.get("id") || String(facts.indexOf(repetition.random(true)) + 1));
 	const text = ref(facts[Number(number.value) - 1]);
 	const another = function() {
 		number.value = String(facts.indexOf(repetition.random(true)) + 1);
