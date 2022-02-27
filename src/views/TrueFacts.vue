@@ -2,7 +2,7 @@
 	<main id="content">
 		<div class="fact-wrapper">
 			<div class="fact">
-				<header>
+				<header style="padding: 40px;">
 					<h1 style="font-size: 1.7em;">
 						fact number
 						<span class="number">
@@ -11,7 +11,7 @@
 						</span>
 					</h1>
 				</header>
-				<span class="text" v-text="getText()"></span>
+				<span class="text" v-text="getText()" style="padding: 40px;"></span>
 			</div>
 			<a href="javascript:void(0)" class="nother fact please blue" @click="another()">i want another fact</a>
 		</div>
