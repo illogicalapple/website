@@ -50,7 +50,7 @@
 		console.log("sending message");
 		console.log(iframe.value);
 		console.log(iframe);
-		iframe.value.contentWindow.postMessage(JSON.stringify(data), window.location.origin)
+		iframe.value.contentWindow.postMessage(JSON.stringify(data), "https://websocket-piano-server.herokuapp.com")
 	};
 	const endNote = function(note) {
 		const data = {
@@ -60,7 +60,7 @@
 		console.log("sending message");
 		console.log(iframe.value);
 		console.log(iframe);
-		iframe.value.contentWindow.postMessage(JSON.stringify(data), window.location.origin)
+		iframe.value.contentWindow.postMessage(JSON.stringify(data), "https://websocket-piano-server.herokuapp.com")
 	};
 </script>
 <style scoped>
