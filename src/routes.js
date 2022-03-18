@@ -6,6 +6,7 @@ import BlogPost from "./views/BlogPost.vue"
 import Piano from "./views/Piano.vue"
 import Scribble from "./views/Scribble.vue"
 import TrueFacts from "./views/TrueFacts.vue"
+import Login from "./views/Login.vue"
 
 // classmates
 import IllogicalBanana from "./views/classmates/IllogicalBanana.vue"
@@ -27,6 +28,18 @@ let _routes = [
 			metaTags: [{
 				name: "description",
 				content: "my website"
+			}]
+		}
+	},
+	{
+		path: "/login",
+		component: Login,
+		name: "login",
+		meta: {
+			title: "login",
+			metaTags: [{
+				name: "description",
+				content: "log in here so you can do stuff better"
 			}]
 		}
 	},
