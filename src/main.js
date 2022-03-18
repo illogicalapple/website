@@ -5,6 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Head from './components/Head.vue'
 import Menu from './components/Menu.vue'
 import Navbar from './components/Navbar.vue'
+import { createAuth0 } from '@auth0/auth0-vue'
 
 let app = createApp(App)
 .component('Head', Head)
@@ -47,6 +48,14 @@ router.beforeEach((to, from, next) => {
     next();
 });
 
-app.use(router)
+app.use(router);
 
-app.mount('#app')
+app.use(
+  createAuth0({
+    domain: "unlogicalapple.us.auth0.com",
+    clientId: "zSIYqhR8hENdZjfHzmcAL2KtqDFyacNc",
+    redirect_uri: window.location.origin
+  })
+);
+
+app.mount('#app');
