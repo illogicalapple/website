@@ -1,10 +1,20 @@
 <template>
   <main id="content">
-    <button @click="loginWithRedirect()">Log in</button>
+    <button @click="login">Log in</button>
   </main>
 </template>
-<script setup>
-  import { useAuth0 } from '@auth0/auth0-vue'
-  const { loginWithRedirect } = useAuth0();
-  alert(loginWithRedirect.toString());
+<script>
+  import { useAuth0 } from '@auth0/auth0-vue';
+
+  export default {
+    setup() {
+      const { loginWithRedirect } = useAuth0();
+
+      return {
+        login: () => {
+          loginWithRedirect();
+        }
+      };
+    }
+  };
 </script>
