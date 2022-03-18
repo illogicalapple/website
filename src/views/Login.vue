@@ -5,8 +5,10 @@
 </template>
 <script>
   import { useAuth0 } from '@auth0/auth0-vue';
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, user, isAuthenticated } = useAuth0();
   const login = () => {
-    loginWithRedirect();
+    try {loginWithRedirect();} catch(e) {console.log(e.message)}
+    console.log('success');
+    console.log(user);
   };
 </script>
