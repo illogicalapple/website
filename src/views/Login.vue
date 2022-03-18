@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <main id="content">
     <button @click="login">Log in</button>
-  </div>
+  </main>
 </template>
 <script>
   import { useAuth0 } from '@auth0/auth0-vue';
