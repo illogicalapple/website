@@ -53,7 +53,7 @@ app.use(router);
 app.use(
   createAuth0({
     domain: "unlogicalapple.us.auth0.com",
-    clientId: "zSIYqhR8hENdZjfHzmcAL2KtqDFyacNc",
+    client_id: "zSIYqhR8hENdZjfHzmcAL2KtqDFyacNc",
     redirect_uri: window.location.origin
   })
 );
