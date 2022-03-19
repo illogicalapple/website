@@ -8,7 +8,7 @@
 
   export default {
     setup() {
-      console.log(useAuth0.toString());
+      console.log(useAuth0());
       const { loginWithRedirect } = useAuth0();
 
       return {
