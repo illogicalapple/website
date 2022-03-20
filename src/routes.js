@@ -7,6 +7,7 @@ import Piano from "./views/Piano.vue"
 import Scribble from "./views/Scribble.vue"
 import TrueFacts from "./views/TrueFacts.vue"
 import Login from "./views/Login.vue"
+import LoginComponent from "./components/Login.vue"
 
 // classmates
 import IllogicalBanana from "./views/classmates/IllogicalBanana.vue"
@@ -149,6 +150,18 @@ let _routes = [
 		name: "smileyshrimps",
 		meta: {
 			title: "smileyshrimps"
+		}
+	},
+	{
+		path: "/__login",
+	 	component: LoginComponent,
+		name: "_login",
+	 	meta: {
+			title: "why are you here",
+			metaTags: [{
+				name: "robots",
+				content: "noindex"
+			}]
 		}
 	},
 	{
