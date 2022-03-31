@@ -9,4 +9,9 @@
 	body {
 		background-color: yellow;
 	}
+	a[href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href][href] {
+		text-decoration: underline;
+		color: blue;
+		cursor: pointer;
+	}
 </style>
