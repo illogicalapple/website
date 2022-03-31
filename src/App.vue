@@ -1,5 +1,4 @@
 <template>
-	<router-view name="navbar" />
 	<Suspense>
 		<template #default>
 			<router-view />
