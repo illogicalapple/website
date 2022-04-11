@@ -9,11 +9,11 @@ export default async function getBanner(user) {
 		if(change == 0) break;
 	}
 	const blob = await fetch(`https://uploads.scratch.mit.edu/get_image/user/${data.id}_402x402.png`).then(r => r.blob());
-    const icon = await new Promise(resolve => {
-    	let reader = new FileReader();
-    	reader.onload = () => resolve(reader.result);
-    	reader.readAsDataURL(blob);
-    });
+	const icon = await new Promise(resolve => {
+		let reader = new FileReader();
+		reader.onload = () => resolve(reader.result);
+		reader.readAsDataURL(blob);
+	});
 	const file = `<svg width="1024" height="768" viewBox="0 0 1024 768" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="1024" height="768" fill="#25AFF4"/>
 <text fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="48" font-weight="bold" letter-spacing="0em"><tspan x="110" y="162.8">${user}&#10;</tspan></text>
