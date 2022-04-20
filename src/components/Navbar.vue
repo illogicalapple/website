@@ -12,7 +12,7 @@
 				<span style="display: table-cell; vertical-align: middle; text-align: center;" class="{{ page == 'stuff' ? 'bold' : '' }}">
 					stuff i made
 				</span>
-				<div class="menu" style="text-align: left; padding: 1.5em 3em; overflow-y: auto; overflow-x: hidden;" :data-open=" menuOpen ? 'bob' : 'not bob'">
+				<div class="menu" style="text-align: left; overflow-y: auto; overflow-x: hidden;" :data-open=" menuOpen ? 'bob' : 'not bob'">
 					<span v-for="(page, index) in pages">
 						<router-link :to="page.url">
 							<h2 style="margin-bottom: 0.5em;color: var(--secondary);" class="blue">{{ page.title }}</h2>
