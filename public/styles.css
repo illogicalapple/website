@@ -153,27 +153,25 @@ nav#navigation div.menu {
 	position: absolute;
 	right: 20px;
 	/* top: 115px; */
-	top: 130px;
-	opacity: 0;
 	transition: 0.3s;
-	transition-property: top, opacity, filter;
-	filter: blur(15px);
+	transition-property: height, padding;
 	padding: 5px 10px;
 	text-align: center;
 	border: 1px solid lightgray;
 	background-clip: border-box;
 	width: 15em;
-	height: 20em;
+	height: 0px;
 	pointer-events: none;
 	-ms-overflow-style: none;
 	scrollbar-color: transparent transparent;
 	scrollbar-width: none;
+	padding: 0em 3em;
 }
 nav#navigation div.menu[data-open="bob"] {
 	top: 115px;
-	opacity: 1;
-	filter: none;
+	padding: 1.5em 3em;
 	pointer-events: all;
+	height: 20em;
 }
 nav#navigation div.menu :is(a, router-link) {
 	padding: 5px;
