@@ -152,7 +152,7 @@ nav#navigation div.menu {
 	background-color: white;
 	position: absolute;
 	right: 20px;
-	/* top: 115px; */
+	top: 115px;
 	transition: 0.3s;
 	transition-property: height, padding;
 	padding: 5px 10px;
