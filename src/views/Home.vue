@@ -8,7 +8,7 @@
 			</p>
 		</div>
 		<a target="_blank" href="https://discord.gg/VADksDBydT">
-			<img src="../assets/discord-logo.svg" style="position: fixed; bottom: 15px; left: 15px;">
+			<img src="../assets/discord-logo.svg" style="position: fixed; bottom: 20px; height: 20px; left: 20px;">
 		</a>
 	</main>
 </template>
