@@ -7,5 +7,8 @@
 				pray for ukraine
 			</p>
 		</div>
+		<a target="_blank" href="https://discord.gg/VADksDBydT">
+			<img src="../assets/discord-logo.svg" style="position: fixed; bottom: 15px; left: 15px;">
+		</a>
 	</main>
 </template>
