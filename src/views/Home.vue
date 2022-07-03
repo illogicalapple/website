@@ -16,7 +16,7 @@
 	<Fireworks /> <!-- for testing: remove later -->
 </template>
 <script setup>
-	import { Fireworks } from "../components/holidays/Fireworks.vue"
+	import Fireworks from "../components/holidays/Fireworks.vue"
 	const holidays = {
 		"7/4": ["4thjuly"]
 	}
