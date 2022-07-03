@@ -17,7 +17,8 @@
 	</Suspense>
 	<Suspense><Fireworks /></Suspense>
 </template>
-<script> <!-- composition api cause script setup was being buggy -->
+<script>
+	// composition api cause script setup was being buggy
 	import Fireworks from "../components/holidays/Fireworks.vue"
 	
 	export default {
