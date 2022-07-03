@@ -12,10 +12,10 @@
 			<img src="../assets/discord-logo.svg" style="position: fixed; bottom: 20px; height: 20px; left: 20px;">
 		</a>
 	</main>
-	<Suspense>
+	<!--Suspense>
 	  <Fireworks v-if="holidays.includes('4thjuly')" />
 	</Suspense>
-	<Suspense><Fireworks /></Suspense>
+	<Suspense><Fireworks /></Suspense-->
 </template>
 <script>
 	// composition api cause script setup was being buggy
