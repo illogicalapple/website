@@ -49,8 +49,8 @@
         }
         if(rocket.yv < 0 && rocket.stage == 1) {
           (new Array(config.explosion.count).fill(0)).forEach((nothing, index) => {
-            let degreez = index * (360 / config.explosion.count));
-            new Rocket(2, rocket.color, rocket.x, rocket.y, sin(degreez * random(multiplier.min, multiplier.max), cos(degreez * random(multiplier.min, multiplier.max));
+            let degreez = index * (360 / config.explosion.count);
+            new Rocket(2, rocket.color, rocket.x, rocket.y, sin(degreez) * random(multiplier.min, multiplier.max), cos(degreez) * random(multiplier.min, multiplier.max));
           });
           delete rocket.index; // delete instead of splice cause i want the empty space to stay :]
         }
