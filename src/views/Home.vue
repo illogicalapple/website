@@ -1,5 +1,5 @@
 <template>
-	<data :value="currentHolidays.join(' ')"></data>
+	<data :value="holidays.join(' ')"></data>
 	<main id="content" style="--forty: calc(0.4 * var(--height));">
 		<img src="/apples-cropped.png" style="height: 30vw; top: 50%; position: absolute; transform: translateY(-50%); left: 15vw; max-width: var(--forty); max-height: var(--forty);">
 		<div class="text" style="left: calc(30vw + min(30vw, var(--forty))); position: absolute; width: 25vw; top: 50%; transform: translateY(-50%);">
@@ -12,10 +12,10 @@
 			<img src="../assets/discord-logo.svg" style="position: fixed; bottom: 20px; height: 20px; left: 20px;">
 		</a>
 	</main>
-	<!--Suspense>
+	<Suspense>
 	  <Fireworks v-if="holidays.includes('4thjuly')" />
 	</Suspense>
-	<Suspense><Fireworks /></Suspense-->
+	<Suspense><Fireworks /></Suspense>
 </template>
 <script>
 	// composition api cause script setup was being buggy
@@ -26,7 +26,7 @@
 			const allHolidays = {
 				"7/4": ["4thjuly"]
 			}
-			const holidays = holidays[`${(new Date).getMonth()}/${(new Date).getDate()}`];
+			const holidays = allHolidays[`${(new Date).getMonth()}/${(new Date).getDate()}`] || [];
 			return { holidays };
 		}
 	}
