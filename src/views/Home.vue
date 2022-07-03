@@ -12,17 +12,23 @@
 			<img src="../assets/discord-logo.svg" style="position: fixed; bottom: 20px; height: 20px; left: 20px;">
 		</a>
 	</main>
-	<!--Suspense>
-	  <Fireworks v-if="currentHolidays.includes('4thjuly')" />
+	<Suspense>
+	  <Fireworks v-if="holidays.includes('4thjuly')" />
 	</Suspense>
-	<Suspense><Fireworks /></Suspense-->
+	<Suspense><Fireworks /></Suspense>
 </template>
-<script setup>
+<script> <!-- composition api cause script setup was being buggy -->
 	import Fireworks from "../components/holidays/Fireworks.vue"
-	const holidays = {
-		"7/4": ["4thjuly"]
+	
+	export default {
+		setup() {
+			const allHolidays = {
+				"7/4": ["4thjuly"]
+			}
+			const holidays = holidays[`${(new Date).getMonth()}/${(new Date).getDate()}`];
+			return { holidays };
+		}
 	}
-	const currentHolidays = holidays[`${(new Date).getMonth()}/${(new Date).getDate()}`];
 </script>
 <style scoped>
   data[value~="4thjuly"] ~ main * {
