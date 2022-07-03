@@ -17,19 +17,13 @@
 	</Suspense>
 	<Suspense><Fireworks></Fireworks></Suspense>
 </template>
-<script>
-	// composition api cause script setup was being buggy
+<script setup>
 	import Fireworks from "../components/holidays/Fireworks.vue"
 	
-	export default {
-		setup() {
-			const allHolidays = {
-				"7/4": ["4thjuly"]
-			}
-			const holidays = allHolidays[`${(new Date).getMonth()}/${(new Date).getDate()}`] || [];
-			return { holidays, Fireworks };
-		}
+	const allHolidays = {
+		"7/4": ["4thjuly"]
 	}
+	const holidays = allHolidays[`${(new Date).getMonth()}/${(new Date).getDate()}`] || [];
 </script>
 <style scoped>
   data[value~="4thjuly"] ~ main * {
