@@ -15,10 +15,9 @@
 	<Suspense v-if="holidays.includes('4thjuly')">
 		<Fireworks></Fireworks>
 	</Suspense>
-	<Suspense><Fireworks></Fireworks></Suspense>
 </template>
 <script setup>
-	import Fireworks from "../components/holidays/Fireworks.vue"
+	// import Fireworks from "../components/holidays/Fireworks.vue"
 	
 	const allHolidays = {
 		"7/4": ["4thjuly"]
@@ -26,16 +25,10 @@
 	const holidays = allHolidays[`${(new Date).getMonth()}/${(new Date).getDate()}`] || [];
 </script>
 <style scoped>
-  data[value~="4thjuly"] ~ main * {
+  /*data[value~="4thjuly"] ~ main * {
   	color: white;
   }
   data[value~="4thjuly"] ~ main {
   	background-color: #121212;
-  }
-  main * {
-  	color: white !important; /* for testing-- remove later */
-  }
-  main {
-  	background-color: #121212;
-  }
+  } didnt work */
 </style>
