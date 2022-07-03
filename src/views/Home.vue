@@ -12,17 +12,17 @@
 			<img src="../assets/discord-logo.svg" style="position: fixed; bottom: 20px; height: 20px; left: 20px;">
 		</a>
 	</main>
-	<div class="fireworks" @load="fireworkOnload()" ref="fireworksContainer"></div>
+	<div class="fireworks" @load="fireworksOnload()" ref="fireworksContainer"></div>
 </template>
 <script setup>
 	import { Fireworks } from "fireworks-js"
 	const allHolidays = {
 		"7/4": ["4thjuly"]
-	}
+	};
 	const fireworksContainer = ref(null);
 	const holidays = allHolidays[`${(new Date).getMonth()}/${(new Date).getDate()}`] || [];
-	function fireworkOnload() {
-		const fireworks = new Fireworks(fireworksContainer.value, { sound: { enabled: true } })
+	function fireworksOnload() {
+		const fireworks = new Fireworks(fireworksContainer.value, { sound: { enabled: true } });
 		fireworks.start();
 	}
 </script>
