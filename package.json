@@ -15,7 +15,8 @@
     "socket.io-client": "^4.4.1",
     "file-saver": "^2.0.5",
     "@auth0/auth0-vue": "1.0.0",
-    "color-convert": "2.0.1"
+    "color-convert": "2.0.1",
+    "fireworks-js": "1.4.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.4",
