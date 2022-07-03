@@ -27,7 +27,7 @@
 				"7/4": ["4thjuly"]
 			}
 			const holidays = allHolidays[`${(new Date).getMonth()}/${(new Date).getDate()}`] || [];
-			return { holidays };
+			return { holidays, Fireworks };
 		}
 	}
 </script>
