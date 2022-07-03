@@ -1,5 +1,4 @@
 <template>
-	<data :value="holidays.join(' ')"></data>
 	<main id="content" style="--forty: calc(0.4 * var(--height));">
 		<img src="/apples-cropped.png" style="height: 30vw; top: 50%; position: absolute; transform: translateY(-50%); left: 15vw; max-width: var(--forty); max-height: var(--forty);">
 		<div class="text" style="left: calc(30vw + min(30vw, var(--forty))); position: absolute; width: 25vw; top: 50%; transform: translateY(-50%);">
@@ -16,18 +15,13 @@
 </template>
 <script setup>
 	import { Fireworks } from "fireworks-js"
-	const allHolidays = {
-		"7/4": ["4thjuly"]
-	};
-	const fireworksContainer = ref(null);
-	const holidays = allHolidays[`${(new Date).getMonth()}/${(new Date).getDate()}`] || [];
 	function fireworksOnload() {
 		const fireworks = new Fireworks(fireworksContainer.value, { sound: { enabled: true } });
 		fireworks.start();
 	}
 </script>
 <style scoped>
-	data[value~="4thjuly"] ~ main * {
+	main * {
 		color: white;
 	}
 	div.fireworks {
