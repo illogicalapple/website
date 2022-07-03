@@ -22,3 +22,11 @@
 	}
 	const currentHolidays = holidays[`${(new Date).getMonth()}/${(new Date).getDate()}`];
 </script>
+<style scoped>
+  data[value~=4thjuly] ~ main * {
+  	color: white;
+  }
+  main * {
+  	color: white !important; /* for testing-- remove later */
+  }
+</style>
