@@ -12,8 +12,10 @@
 			<img src="../assets/discord-logo.svg" style="position: fixed; bottom: 20px; height: 20px; left: 20px;">
 		</a>
 	</main>
-	<Fireworks v-if="currentHolidays.includes('4thjuly')" />
-	<Fireworks /> <!-- for testing: remove later -->
+	<Suspense>
+	  <Fireworks v-if="currentHolidays.includes('4thjuly')" />
+	</Suspense
+	<Suspense><Fireworks /></Suspense> <!-- for testing: remove later -->
 </template>
 <script setup>
 	import Fireworks from "../components/holidays/Fireworks.vue"
@@ -26,7 +28,13 @@
   data[value~=4thjuly] ~ main * {
   	color: white;
   }
+  data[value~=4thjuly] ~ main {
+  	background-color: #121212;
+  }
   main * {
   	color: white !important; /* for testing-- remove later */
+  }
+  main {
+  	background-color: #121212;
   }
 </style>
