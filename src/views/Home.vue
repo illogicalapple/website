@@ -15,7 +15,7 @@
 	<!--Suspense>
 	  <Fireworks v-if="currentHolidays.includes('4thjuly')" />
 	</Suspense>
-	<Suspense><Fireworks /></Suspense> <!-- for testing: remove later -->
+	<Suspense><Fireworks /></Suspense-->
 </template>
 <script setup>
 	import Fireworks from "../components/holidays/Fireworks.vue"
