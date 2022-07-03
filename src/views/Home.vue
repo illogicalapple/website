@@ -12,7 +12,7 @@
 			<img src="../assets/discord-logo.svg" style="position: fixed; bottom: 20px; height: 20px; left: 20px;">
 		</a>
 	</main>
-	<Suspense>
+	<!--Suspense>
 	  <Fireworks v-if="currentHolidays.includes('4thjuly')" />
 	</Suspense>
 	<Suspense><Fireworks /></Suspense> <!-- for testing: remove later -->
