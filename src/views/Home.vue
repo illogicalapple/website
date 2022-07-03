@@ -11,4 +11,8 @@
 			<img src="../assets/discord-logo.svg" style="position: fixed; bottom: 20px; height: 20px; left: 20px;">
 		</a>
 	</main>
+	<canvas class="fireworks" v-if=""></canvas>
 </template>
+<script setup>
+	import { Fireworks } from "../components/holidays/Fireworks.vue"
+</script>
