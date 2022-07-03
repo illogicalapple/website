@@ -12,23 +12,31 @@
 			<img src="../assets/discord-logo.svg" style="position: fixed; bottom: 20px; height: 20px; left: 20px;">
 		</a>
 	</main>
-	<Suspense v-if="holidays.includes('4thjuly')">
-		<Fireworks></Fireworks>
-	</Suspense>
+	<div class="fireworks" @load="fireworkOnload()" ref="fireworksContainer"></div>
 </template>
 <script setup>
-	// import Fireworks from "../components/holidays/Fireworks.vue"
-	
+	import { Fireworks } from "fireworks-js"
 	const allHolidays = {
 		"7/4": ["4thjuly"]
 	}
+	const fireworksContainer = ref(null);
 	const holidays = allHolidays[`${(new Date).getMonth()}/${(new Date).getDate()}`] || [];
+	function fireworkOnload() {
+		const fireworks = new Fireworks(fireworksContainer.value, { sound: { enabled: true } })
+		fireworks.start();
+	}
 </script>
 <style scoped>
-  /*data[value~="4thjuly"] ~ main * {
-  	color: white;
-  }
-  data[value~="4thjuly"] ~ main {
-  	background-color: #121212;
-  } didnt work */
+	data[value~="4thjuly"] ~ main * {
+		color: white;
+	}
+	div.fireworks {
+		width: 100vw;
+		height: calc(var(--height) - 85px);
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		z-index: -100000;
+		display: inline-block;
+	}
 </style>
