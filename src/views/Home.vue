@@ -4,7 +4,7 @@
 		<div class="text" style="left: calc(30vw + min(30vw, var(--forty))); position: absolute; width: 25vw; top: 50%; transform: translateY(-50%);">
 			<h1> hi, <span class="home-blue-underline" style="position: relative;">it's me.</span></h1>
 			<p style="font-size: 1.4em;">
-				pray for ukraine
+				rip technoblade
 			</p>
 		</div>
 		<a target="_blank" href="https://discord.gg/VADksDBydT">
