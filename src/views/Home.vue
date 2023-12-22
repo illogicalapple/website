@@ -4,7 +4,14 @@
 		<div class="text" style="left: calc(30vw + min(30vw, var(--forty))); position: absolute; width: 25vw; top: 50%; transform: translateY(-50%);">
 			<h1> hi, <span class="home-blue-underline" style="position: relative;">it's me.</span></h1>
 			<p style="font-size: 1.4em;">
-				rip technoblade
+				<style>
+					.radi8-webring-container {
+  						all: unset;
+  						flex-direction: column;
+  						padding: 1em;
+					}
+				</style>
+				<script src="https://cdn.radi8.dev/ring.js" data-site-id="illogicalapple"></script>
 			</p>
 		</div>
 		<a target="_blank" href="https://discord.gg/VADksDBydT">
